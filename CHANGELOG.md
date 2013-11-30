@@ -1,6 +1,8 @@
 # CHANGELOG GC Testimonials to Testimonials
 
 ## master
+* Add screenshot 1. GC Testimonials to Testimonials Settings
+* Add screenshot 2. GC Testimonials to Testimonials Migrator
 * TBD
 
 ## 1.0.0

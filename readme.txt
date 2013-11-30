@@ -72,7 +72,8 @@ Please visit the [GC Testimonials to Testimonials Knowledge Base](https://aihrus
 
 == Screenshots ==
 
-1. TBD
+1. GC Testimonials to Testimonials Settings
+2. GC Testimonials to Testimonials Migrator
 
 [gallery]
 
