@@ -5,7 +5,7 @@
 
 ## Welcome to the GC Testimonials to Testimonials Github repository
 
-GC Testimonials to Testimonials plugin allows you to add custom fields to the edit screen bulk and quick edit panels.
+GC Testimonials to Testimonials plugin allows you to migrate GC Testimonials entries to Testimonials custom post types.
 
 While the documentation for the [GC Testimonials to Testimonials plugin](http://wordpress.org/plugins/gc-testimonials-to-testimonials/) can be found at WordPress.org Plugin Directory, here you can browse the source of the project, find and discuss open issues and, even [contribute yourself](https://github.com/michael-cannon/gc-testimonials-to-testimonials/blob/master/CONTRIBUTING.md).
 

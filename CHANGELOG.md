@@ -3,7 +3,7 @@
 ## master
 * TBD
 
-## 0.0.1
+## 1.0.0
 * Initial code release 
 
 ## 0.0.0

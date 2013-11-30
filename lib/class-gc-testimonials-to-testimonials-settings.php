@@ -65,7 +65,7 @@ class Gc_Testimonials_to_Testimonials_Settings extends Aihrus_Settings {
 
 
 	public static function admin_menu() {
-		self::$admin_page = add_options_page( esc_html__( 'GC Testimonials to Testimonials Settings', 'gc-testimonials-to-testimonials' ), esc_html__( 'GC Testimonials to Testimonials', 'gc-testimonials-to-testimonials' ), 'manage_options', self::ID, array( __CLASS__, 'display_page' ) );
+		self::$admin_page =  add_submenu_page( 'edit.php?post_type=' . Testimonials_Widget::PT, esc_html__( 'GC Testimonials to Testimonials Settings', 'gc-testimonials-to-testimonials' ), esc_html__( 'GCT Settings', 'gc-testimonials-to-testimonials' ), 'manage_options', self::ID, array( __CLASS__, 'display_page' ) );
 
 		add_action( 'admin_print_scripts-' . self::$admin_page, array( __CLASS__, 'scripts' ) );
 		add_action( 'admin_print_styles-' . self::$admin_page, array( __CLASS__, 'styles' ) );
@@ -73,8 +73,8 @@ class Gc_Testimonials_to_Testimonials_Settings extends Aihrus_Settings {
 
 		add_screen_meta_link(
 			'wsp_importer_link',
-			esc_html__( 'GC Testimonials to Testimonials Processer', 'gc-testimonials-to-testimonials' ),
-			admin_url( 'tools.php?page=' . Gc_Testimonials_to_Testimonials::ID ),
+			esc_html__( 'GC Testimonials to Testimonials Migrator', 'gc-testimonials-to-testimonials' ),
+			admin_url( 'edit.php?post_type=' . Testimonials_Widget::PT . '&page=' . Gc_Testimonials_to_Testimonials::ID ),
 			self::$admin_page,
 			array( 'style' => 'font-weight: bold;' )
 		);
@@ -89,7 +89,7 @@ class Gc_Testimonials_to_Testimonials_Settings extends Aihrus_Settings {
 
 
 	public static function sections() {
-		self::$sections['general'] = esc_html__( 'General', 'gc-testimonials-to-testimonials' );
+		// self::$sections['general'] = esc_html__( 'General', 'gc-testimonials-to-testimonials' );
 		self::$sections['testing'] = esc_html__( 'Testing', 'gc-testimonials-to-testimonials' );
 
 		parent::sections();
@@ -104,45 +104,9 @@ class Gc_Testimonials_to_Testimonials_Settings extends Aihrus_Settings {
 	 * @SuppressWarnings(PHPMD.Superglobals)
 	 */
 	public static function settings() {
-		// General
-		self::$settings['paging'] = array(
-			'title' => esc_html__( 'Enable Paging?', 'gc-testimonials-to-testimonials' ),
-			'desc' => esc_html__( 'For `[gct2t_widget_list]`', 'gc-testimonials-to-testimonials' ),
-			'type' => 'select',
-			'choices' => array(
-				'' => esc_html__( 'Disable', 'gc-testimonials-to-testimonials' ),
-				1 => esc_html__( 'Enable', 'gc-testimonials-to-testimonials' ),
-				'before' => esc_html__( 'Before wps', 'gc-testimonials-to-testimonials' ),
-				'after' => esc_html__( 'After wps', 'gc-testimonials-to-testimonials' ),
-			),
-			'std' => 1,
-			'widget' => 0,
-		);
-
-		// Post Type
-		$desc        = __( 'URL slug-name for <a href="%1s">wps archive</a> page.', 'gc-testimonials-to-testimonials' );
-		$has_archive = gct2t_get_option( 'has_archive', '' );
-		$site_url    = site_url( '/' . $has_archive );
-
-		self::$settings['has_archive'] = array(
-			'title' => esc_html__( 'Archive Page URL', 'gc-testimonials-to-testimonials' ),
-			'desc' => sprintf( $desc, $site_url ),
-			'std' => 'wps-archive',
-			'validate' => 'sanitize_title',
-			'widget' => 0,
-		);
-
 		// Testing
-		self::$settings['debug_mode'] = array(
-			'section' => 'testing',
-			'title' => esc_html__( 'Debug Mode?', 'gc-testimonials-to-testimonials' ),
-			'desc' => esc_html__( 'Bypass Ajax controller to handle posts_to_import directly for testing purposes.', 'gc-testimonials-to-testimonials' ),
-			'type' => 'checkbox',
-			'std' => 0,
-		);
-
 		self::$settings['posts_to_import'] = array(
-			'title' => esc_html__( 'Posts to Import', 'gc-testimonials-to-testimonials' ),
+			'title' => esc_html__( 'GC Testimonials to Import', 'gc-testimonials-to-testimonials' ),
 			'desc' => esc_html__( "A CSV list of post ids to import, like '1,2,3'.", 'gc-testimonials-to-testimonials' ),
 			'std' => '',
 			'type' => 'text',
@@ -151,7 +115,7 @@ class Gc_Testimonials_to_Testimonials_Settings extends Aihrus_Settings {
 		);
 
 		self::$settings['skip_importing_post_ids'] = array(
-			'title' => esc_html__( 'Skip Importing Posts', 'gc-testimonials-to-testimonials' ),
+			'title' => esc_html__( 'Skip Importing GC Testimonials', 'gc-testimonials-to-testimonials' ),
 			'desc' => esc_html__( "A CSV list of post ids to not import, like '1,2,3'.", 'gc-testimonials-to-testimonials' ),
 			'std' => '',
 			'type' => 'text',

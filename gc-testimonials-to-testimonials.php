@@ -2,8 +2,8 @@
 /**
  * Plugin Name: GC Testimonials to Testimonials
  * Plugin URI: http://wordpress.org/plugins/gc-testimonials-to-testimonials/
- * Description: TBD
- * Version: 0.0.1
+ * Description: Migrate GC Testimonials entries to Testimonials custom post types.
+ * Version: 1.0.0
  * Author: Michael Cannon
  * Author URI: http://aihr.us/resume/
  * License: GPLv2 or later
@@ -36,11 +36,12 @@ class Gc_Testimonials_to_Testimonials extends Aihrus_Common {
 	const FREE_PLUGIN_BASE = 'testimonials-widget/testimonials-widget.php';
 	const FREE_VERSION     = '2.16.2';
 
+	const GCT_PT      = 'testimonial';
 	const ID          = 'gc-testimonials-to-testimonials';
 	const ITEM_NAME   = 'GC Testimonials to Testimonials';
 	const PLUGIN_BASE = 'gc-testimonials-to-testimonials/gc-testimonials-to-testimonials.php';
 	const SLUG        = 'gct2t_';
-	const VERSION     = '0.0.1';
+	const VERSION     = '1.0.0';
 
 	private static $post_types;
 
@@ -59,7 +60,6 @@ class Gc_Testimonials_to_Testimonials extends Aihrus_Common {
 		add_action( 'admin_init', array( __CLASS__, 'admin_init' ) );
 		add_action( 'admin_menu', array( __CLASS__, 'admin_menu' ) );
 		add_action( 'init', array( __CLASS__, 'init' ) );
-		add_action( 'widgets_init', array( __CLASS__, 'widgets_init' ) );
 	}
 
 
@@ -69,12 +69,12 @@ class Gc_Testimonials_to_Testimonials extends Aihrus_Common {
 		add_filter( 'plugin_action_links', array( __CLASS__, 'plugin_action_links' ), 10, 2 );
 		add_filter( 'plugin_row_meta', array( __CLASS__, 'plugin_row_meta' ), 10, 2 );
 
-		self::$settings_link = '<a href="' . get_admin_url() . 'options-general.php?page=' . Gc_Testimonials_to_Testimonials_Settings::ID . '">' . __( 'Settings', 'gc-testimonials-to-testimonials' ) . '</a>';
+		self::$settings_link = '<a href="' . get_admin_url() . 'edit.php?post_type=' . Testimonials_Widget::PT . '&page=' . Gc_Testimonials_to_Testimonials_Settings::ID . '">' . __( 'Settings', 'gc-testimonials-to-testimonials' ) . '</a>';
 	}
 
 
 	public static function admin_menu() {
-		self::$menu_id = add_management_page( esc_html__( 'GC Testimonials to Testimonials Processer', 'gc-testimonials-to-testimonials' ), esc_html__( 'GC Testimonials to Testimonials Processer', 'gc-testimonials-to-testimonials' ), 'manage_options', self::ID, array( __CLASS__, 'user_interface' ) );
+		self::$menu_id = add_submenu_page( 'edit.php?post_type=' . Testimonials_Widget::PT, esc_html__( 'GC Testimonials to Testimonials Migrator', 'gc-testimonials-to-testimonials' ), esc_html__( 'GCT Migrator', 'gc-testimonials-to-testimonials' ), 'manage_options', self::ID, array( __CLASS__, 'user_interface' ) );
 
 		add_action( 'admin_print_scripts-' . self::$menu_id, array( __CLASS__, 'scripts' ) );
 		add_action( 'admin_print_styles-' . self::$menu_id, array( __CLASS__, 'styles' ) );
@@ -82,7 +82,7 @@ class Gc_Testimonials_to_Testimonials extends Aihrus_Common {
 		add_screen_meta_link(
 			'gct2t_settings_link',
 			esc_html__( 'GC Testimonials to Testimonials Settings', 'gc-testimonials-to-testimonials' ),
-			admin_url( 'options-general.php?page=' . Gc_Testimonials_to_Testimonials_Settings::ID ),
+			admin_url( 'edit.php?post_type=' . Testimonials_Widget::PT . '&page=' . Gc_Testimonials_to_Testimonials_Settings::ID ),
 			self::$menu_id,
 			array( 'style' => 'font-weight: bold;' )
 		);
@@ -102,7 +102,7 @@ class Gc_Testimonials_to_Testimonials extends Aihrus_Common {
 		if ( self::PLUGIN_BASE == $file ) {
 			array_unshift( $links, self::$settings_link );
 
-			$link = '<a href="' . get_admin_url() . 'tools.php?page=' . self::ID . '">' . esc_html__( 'Process', 'gc-testimonials-to-testimonials' ) . '</a>';
+			$link = '<a href="' . get_admin_url() . 'edit.php?post_type=' . Testimonials_Widget::PT . '&page=' . self::ID . '">' . esc_html__( 'Migrate', 'gc-testimonials-to-testimonials' ) . '</a>';
 			array_unshift( $links, $link );
 		}
 
@@ -164,10 +164,8 @@ class Gc_Testimonials_to_Testimonials extends Aihrus_Common {
 
 
 	public static function set_post_types() {
-		$post_types       = get_post_types( array( 'public' => true ), 'names' );
-		self::$post_types = array();
-		foreach ( $post_types as $post_type )
-			self::$post_types[] = $post_type;
+		self::$post_types   = array();
+		self::$post_types[] = self::GCT_PT;
 	}
 
 
@@ -188,20 +186,9 @@ class Gc_Testimonials_to_Testimonials extends Aihrus_Common {
 
 <div class="wrap wpsposts">
 	<div class="icon32" id="icon-tools"></div>
-	<h2><?php _e( 'GC Testimonials to Testimonials Processer', 'gc-testimonials-to-testimonials' ); ?></h2>
+	<h2><?php _e( 'GC Testimonials to Testimonials Migrator', 'gc-testimonials-to-testimonials' ); ?></h2>
 
 <?php
-		if ( gct2t_get_option( 'debug_mode' ) ) {
-			$posts_to_import = gct2t_get_option( 'posts_to_import' );
-			$posts_to_import = explode( ',', $posts_to_import );
-			foreach ( $posts_to_import as $post_id ) {
-				self::$post_id = $post_id;
-				self::ajax_process_post();
-			}
-
-			exit( __LINE__ . ':' . basename( __FILE__ ) . " DONE<br />\n" );
-		}
-
 		// If the button was clicked
 		if ( ! empty( $_POST[ self::ID ] ) || ! empty( $_REQUEST['posts'] ) ) {
 			// Form nonce check
@@ -237,7 +224,6 @@ class Gc_Testimonials_to_Testimonials extends Aihrus_Common {
 		global $wpdb;
 
 		$query = array(
-			'post_status' => array( 'publish', 'private' ),
 			'post_type' => self::$post_types,
 			'orderby' => 'post_modified',
 			'order' => 'DESC',
@@ -282,15 +268,15 @@ class Gc_Testimonials_to_Testimonials extends Aihrus_Common {
 	<form method="post" action="">
 <?php wp_nonce_field( self::ID ); ?>
 
-	<p><?php _e( 'Use this tool to process posts for TBD.', 'gc-testimonials-to-testimonials' ); ?></p>
+	<p><?php _e( 'Use this tool for migrating GC Testimonials entries to Testimonials custom post types.', 'gc-testimonials-to-testimonials' ); ?></p>
 
-	<p><?php _e( 'This processing is not reversible. Backup your database beforehand or be prepared to revert each transformmed post manually.', 'gc-testimonials-to-testimonials' ); ?></p>
+	<p><?php _e( 'This migration is not reversible. Backup your database beforehand or be prepared to delete each migrated testimonial manually.', 'gc-testimonials-to-testimonials' ); ?></p>
 
 	<p><?php printf( esc_html__( 'Please review your %s before proceeding.', 'gc-testimonials-to-testimonials' ), self::$settings_link ); ?></p>
 
 	<p><?php _e( 'To begin, just press the button below.', 'gc-testimonials-to-testimonials' ); ?></p>
 
-	<p><input type="submit" class="button hide-if-no-js" name="<?php echo self::ID; ?>" id="<?php echo self::ID; ?>" value="<?php _e( 'Process GC Testimonials to Testimonials', 'gc-testimonials-to-testimonials' ) ?>" /></p>
+	<p><input type="submit" class="button hide-if-no-js" name="<?php echo self::ID; ?>" id="<?php echo self::ID; ?>" value="<?php _e( 'Migrate GC Testimonials to Testimonials', 'gc-testimonials-to-testimonials' ) ?>" /></p>
 
 	<noscript><p><em><?php _e( 'You must enable Javascript in order to proceed!', 'gc-testimonials-to-testimonials' ) ?></em></p></noscript>
 
@@ -322,14 +308,14 @@ class Gc_Testimonials_to_Testimonials extends Aihrus_Common {
 		<div id="wpsposts-bar-percent" style="position:absolute;left:50%;top:50%;width:300px;margin-left:-150px;height:25px;margin-top:-9px;font-weight:bold;text-align:center;"></div>
 	</div>
 
-	<p><input type="button" class="button hide-if-no-js" name="wpsposts-stop" id="wpsposts-stop" value="<?php _e( 'Abort Processing Posts', 'gc-testimonials-to-testimonials' ) ?>" /></p>
+	<p><input type="button" class="button hide-if-no-js" name="wpsposts-stop" id="wpsposts-stop" value="<?php _e( 'Abort Migrating Posts', 'gc-testimonials-to-testimonials' ) ?>" /></p>
 
 	<h3 class="title"><?php _e( 'Status', 'gc-testimonials-to-testimonials' ) ?></h3>
 
 	<p>
-		<?php printf( esc_html__( 'Total Postss: %s', 'gc-testimonials-to-testimonials' ), $count ); ?><br />
-		<?php printf( esc_html__( 'Posts Processed: %s', 'gc-testimonials-to-testimonials' ), '<span id="wpsposts-debug-successcount">0</span>' ); ?><br />
-		<?php printf( esc_html__( 'Process Failures: %s', 'gc-testimonials-to-testimonials' ), '<span id="wpsposts-debug-failurecount">0</span>' ); ?>
+		<?php printf( esc_html__( 'Total Testimonials: %s', 'gc-testimonials-to-testimonials' ), $count ); ?><br />
+		<?php printf( esc_html__( 'Testimonials Migrated: %s', 'gc-testimonials-to-testimonials' ), '<span id="wpsposts-debug-successcount">0</span>' ); ?><br />
+		<?php printf( esc_html__( 'Migration Failures: %s', 'gc-testimonials-to-testimonials' ), '<span id="wpsposts-debug-failurecount">0</span>' ); ?>
 	</p>
 
 	<ol id="wpsposts-debuglist">
@@ -448,25 +434,25 @@ class Gc_Testimonials_to_Testimonials extends Aihrus_Common {
 
 
 	/**
-	 * Process a single post ID (this is an AJAX handler)
+	 * Migrate a single post ID (this is an AJAX handler)
 	 *
 	 * @SuppressWarnings(PHPMD.ExitExpression)
 	 * @SuppressWarnings(PHPMD.Superglobals)
 	 */
 	public static function ajax_process_post() {
-		if ( ! gct2t_get_option( 'debug_mode' ) ) {
-			error_reporting( 0 ); // Don't break the JSON result
-			header( 'Content-type: application/json' );
-			self::$post_id = intval( $_REQUEST['id'] );
-		}
+		error_reporting( 0 ); // Don't break the JSON result
+		header( 'Content-type: application/json' );
+		self::$post_id = intval( $_REQUEST['id'] );
 
-		$post = get_post( self::$post_id );
-		if ( ! $post || ! in_array( $post->post_type, self::$post_types )  )
-			die( json_encode( array( 'error' => sprintf( esc_html__( 'Failed Processing: %s is incorrect post type.', 'gc-testimonials-to-testimonials' ), esc_html( self::$post_id ) ) ) ) );
+		$post = get_post( self::$post_id, ARRAY_A );
+		if ( ! $post || ! in_array( $post['post_type'], self::$post_types )  )
+			die( json_encode( array( 'error' => sprintf( esc_html__( 'Failed Migration: %s is incorrect post type.', 'gc-testimonials-to-testimonials' ), esc_html( self::$post_id ) ) ) ) );
 
-		self::do_something( self::$post_id, $post );
-
-		die( json_encode( array( 'success' => sprintf( __( '&quot;<a href="%1$s" target="_blank">%2$s</a>&quot; Post ID %3$s was successfully processed in %4$s seconds.', 'gc-testimonials-to-testimonials' ), get_permalink( self::$post_id ), esc_html( get_the_title( self::$post_id ) ), self::$post_id, timer_stop() ) ) ) );
+		$result = self::do_something( self::$post_id, $post );
+		if ( is_numeric( $result ) )
+			die( json_encode( array( 'success' => sprintf( __( '&quot;<a href="%1$s" target="_blank">%2$s</a>&quot; GC Testimonial ID %3$s was successfully migrated to Testimonials %6$s &quot;<a href="%4$s" target="_blank">%5$s</a>&quot;.', 'gc-testimonials-to-testimonials' ), get_permalink( self::$post_id ), esc_html( get_the_title( self::$post_id ) ), self::$post_id, get_permalink( $result ), esc_html( get_the_title( $result ) ), $result ) ) ) );
+		else
+			die( json_encode( array( 'error' => sprintf( __( '&quot;<a href="%1$s" target="_blank">%2$s</a>&quot; Unable to be migrated.', 'gc-testimonials-to-testimonials' ), get_permalink( self::$post_id ), esc_html( get_the_title( self::$post_id ) ) ) ) ) );
 	}
 
 
@@ -476,13 +462,101 @@ class Gc_Testimonials_to_Testimonials extends Aihrus_Common {
 	 * @SuppressWarnings(PHPMD.UnusedFormalParameter)
 	 */
 	public static function do_something( $post_id, $post ) {
-		// do something there with the post
-		// use error_log to track happenings
+		global $wpdb;
+
+		$migrated_key  = '_' . Testimonials_Widget::PT;
+		$migrated_args = array(
+			'post_type' => Testimonials_Widget::PT,
+			'meta_query' => array(
+				array(
+					'key' => $migrated_key,
+					'value' => $post_id,
+					'type' => 'NUMERIC',
+				)
+			)
+		);
+
+		$migrated = new WP_Query( $migrated_args );
+		if ( $migrated->have_posts() ) {
+			$migrated->the_post();
+
+			// fixme return get_the_ID();
+			wp_delete_post( get_the_ID(), true );
+		}
+
+		unset( $post['ID'] );
+		unset( $post['guid'] );
+		$post['post_type'] = Testimonials_Widget::PT;
+
+		$new_post_id = wp_insert_post( $post, true );
+		$post_meta   = get_post_custom( $post_id );
+
+		$fields = array(
+			'client_name' => 'testimonials-widget-client-name',
+			// 'client_photo' => 'featured-image',
+			'company_name' => 'testimonials-widget-company',
+			'company_website' => 'testimonials-widget-url',
+			'email' => 'testimonials-widget-email',
+		);
+		foreach ( $fields as $field => $target ) {
+			if ( isset( $post_meta[ $field ][ 0 ] ) )
+				add_post_meta( $new_post_id, $target, $post_meta[ $field ][ 0 ] );
+		}
+
+		$categories = wp_get_object_terms( $post_id, 'testimonial-category' );
+		if ( ! empty( $categories ) ) {
+			$use_cpt_taxonomy = tw_get_option( 'use_cpt_taxonomy', false );
+			if ( ! $use_cpt_taxonomy )
+				$tax_cat = 'category';
+			else
+				$tax_cat = Testimonials_Widget::$cpt_category;
+
+			foreach ( $categories as $category ) {
+				$term = term_exists( $category->name, $tax_cat );
+				if ( ! is_array( $term ) )
+					$term = wp_insert_term( $category->name, $tax_cat );
+
+				if ( ! is_array( $term ) )
+					continue;
+
+				$term_id = intval( $term['term_id'] );
+				if ( $term_id )
+					wp_set_object_terms( $new_post_id, $term_id, $tax_cat, true );
+			}
+		}	
+
+		$thumbnail_id = get_post_meta( $post_id, '_thumbnail_id', true );
+		if ( $thumbnail_id ) {
+			$src   = wp_get_attachment_url( $thumbnail_id );
+			$file  = basename( $src );
+
+			$file_move = wp_upload_bits( $file, null, Testimonials_Widget::file_get_contents_curl( $src ) );
+			$filename  = $file_move['file'];
+
+			$wp_filetype = wp_check_filetype( $file, null );
+			$attachment  = array(
+				'post_mime_type' => $wp_filetype['type'],
+				'post_status' => 'inherit',
+				'post_title' => $file,
+			);
+
+			require_once ABSPATH . 'wp-admin/includes/image.php';
+
+			$image_id = wp_insert_attachment( $attachment, $filename, $new_post_id );
+			$metadata = wp_generate_attachment_metadata( $image_id, $filename );
+
+			wp_update_attachment_metadata( $image_id, $metadata );
+			update_post_meta( $new_post_id, '_thumbnail_id', $image_id );
+		}
+
+		add_post_meta( $new_post_id, $migrated_key, $post_id );
+
+		return $new_post_id;
 	}
 
 
-	public static function notice_0_0_1() {
-		$text = sprintf( __( 'If your GC Testimonials to Testimonials display has gone to funky town, please <a href="%s">read the FAQ</a> about possible CSS fixes.', 'gc-testimonials-to-testimonials' ), 'https://aihrus.zendesk.com/entries/23722573-Major-Changes-Since-2-10-0' );
+	public static function notice_1_0_0() {
+		$text = sprintf( __( 'If your Migrate GC Testimonials to Testimonials display has gone to funky town, please <a href="%s">read the FAQ</a> about possible CSS fixes.', 'gc-testimonials-to-testimonials' ), 'https://aihrus.zendesk.com/entries/23722573-Major-Changes-Since-2-10-0' );
 
 		self::notice_updated( $text );
 	}
@@ -503,8 +577,8 @@ class Gc_Testimonials_to_Testimonials extends Aihrus_Common {
 	public static function update() {
 		$prior_version = gct2t_get_option( 'admin_notices' );
 		if ( $prior_version ) {
-			if ( $prior_version < '0.0.1' )
-				add_action( 'admin_notices', array( __CLASS__, 'notice_0_0_1' ) );
+			if ( $prior_version < '1.0.0' )
+				add_action( 'admin_notices', array( __CLASS__, 'notice_1_0_0' ) );
 
 			if ( $prior_version < self::VERSION )
 				do_action( 'gct2t_update' );
@@ -529,8 +603,6 @@ class Gc_Testimonials_to_Testimonials extends Aihrus_Common {
 			wp_enqueue_script( 'jquery-ui-progressbar' );
 
 			add_action( 'admin_footer', array( 'Gc_Testimonials_to_Testimonials', 'get_scripts' ) );
-		} else {
-			add_action( 'wp_footer', array( 'Gc_Testimonials_to_Testimonials', 'get_scripts' ) );
 		}
 
 		do_action( 'gct2t_scripts', $atts );
@@ -543,11 +615,6 @@ class Gc_Testimonials_to_Testimonials extends Aihrus_Common {
 			wp_enqueue_style( 'jquery-ui-progressbar' );
 
 			add_action( 'admin_footer', array( 'Gc_Testimonials_to_Testimonials', 'get_styles' ) );
-		} else {
-			wp_register_style( __CLASS__, plugins_url( 'gc-testimonials-to-testimonials.css', __FILE__ ) );
-			wp_enqueue_style( __CLASS__ );
-
-			add_action( 'wp_footer', array( 'Gc_Testimonials_to_Testimonials', 'get_styles' ) );
 		}
 
 		do_action( 'gct2t_styles' );
@@ -563,7 +630,7 @@ class Gc_Testimonials_to_Testimonials extends Aihrus_Common {
 		if ( ! is_plugin_active( $base ) )
 			$good_version = false;
 
-		if ( is_plugin_inactive( self::FREE_PLUGIN_BASE ) || WordPress_Starter::VERSION < self::FREE_VERSION )
+		if ( is_plugin_inactive( self::FREE_PLUGIN_BASE ) || Testimonials_Widget::VERSION < self::FREE_VERSION )
 			$good_version = false;
 
 		if ( ! $good_version && is_plugin_active( $base ) ) {
