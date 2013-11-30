@@ -33,6 +33,9 @@ require_once GCT2T_PLUGIN_DIR_LIB . '/aihrus/class-aihrus-common.php';
 
 
 class Gc_Testimonials_to_Testimonials extends Aihrus_Common {
+	const FREE_PLUGIN_BASE = 'testimonials-widget/testimonials-widget.php';
+	const FREE_VERSION     = '2.16.2';
+
 	const ID          = 'gc-testimonials-to-testimonials';
 	const ITEM_NAME   = 'GC Testimonials to Testimonials';
 	const PLUGIN_BASE = 'gc-testimonials-to-testimonials/gc-testimonials-to-testimonials.php';
@@ -57,7 +60,6 @@ class Gc_Testimonials_to_Testimonials extends Aihrus_Common {
 		add_action( 'admin_menu', array( __CLASS__, 'admin_menu' ) );
 		add_action( 'init', array( __CLASS__, 'init' ) );
 		add_action( 'widgets_init', array( __CLASS__, 'widgets_init' ) );
-		add_shortcode( 'wordpress_starter_shortcode', array( __CLASS__, 'wordpress_starter_shortcode' ) );
 	}
 
 
@@ -111,6 +113,12 @@ class Gc_Testimonials_to_Testimonials extends Aihrus_Common {
 	public static function activation() {
 		if ( ! current_user_can( 'activate_plugins' ) )
 			return;
+
+		if ( ! is_plugin_active( Gc_Testimonials_to_Testimonials::FREE_PLUGIN_BASE ) ) {
+			deactivate_plugins( Gc_Testimonials_to_Testimonials::PLUGIN_BASE );
+			add_action( 'admin_notices', array( 'Gc_Testimonials_to_Testimonials', 'notice_version' ) );
+			return;
+		}
 	}
 
 
@@ -147,7 +155,6 @@ class Gc_Testimonials_to_Testimonials extends Aihrus_Common {
 
 		$links = array(
 			'<a href="http://aihr.us/about-aihrus/donate/"><img src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" alt="PayPal - The safer, easier way to pay online!" /></a>',
-			'<a href="http://aihr.us/downloads/gc-testimonials-to-testimonials-premium-wordpress-plugin/">Purchase GC Testimonials to Testimonials Premium</a>',
 		);
 
 		$input = array_merge( $input, $links );
@@ -547,21 +554,38 @@ class Gc_Testimonials_to_Testimonials extends Aihrus_Common {
 	}
 
 
-	public static function wordpress_starter_shortcode( $atts ) {
-		self::call_scripts_styles( $atts );
-
-		return __CLASS__ . ' shortcode';
-	}
-
-
 	public static function version_check() {
 		require_once ABSPATH . 'wp-admin/includes/plugin.php';
 
+		$base         = self::PLUGIN_BASE;
 		$good_version = true;
-		if ( ! is_plugin_active( self::PLUGIN_BASE ) )
+
+		if ( ! is_plugin_active( $base ) )
 			$good_version = false;
 
+		if ( is_plugin_inactive( self::FREE_PLUGIN_BASE ) || WordPress_Starter::VERSION < self::FREE_VERSION )
+			$good_version = false;
+
+		if ( ! $good_version && is_plugin_active( $base ) ) {
+			deactivate_plugins( $base );
+			self::set_notice( 'notice_version' );
+		}
+
+		if ( ! $good_version )
+			self::check_notices();
+
 		return $good_version;
+	}
+
+
+	public static function notice_version( $free_base = null, $free_name = null, $free_slug = null, $free_version = null, $item_name = null ) {
+		$free_base    = self::FREE_PLUGIN_BASE;
+	   	$free_name    = 'Testimonials';
+		$free_slug    = 'testimonials-widget';
+		$free_version = self::FREE_VERSION;
+		$item_name    = self::ITEM_NAME;
+
+		parent::notice_version( $free_base, $free_name, $free_slug, $free_version, $item_name );
 	}
 
 
@@ -616,13 +640,6 @@ class Gc_Testimonials_to_Testimonials extends Aihrus_Common {
 	}
 
 
-	public static function widgets_init() {
-		require_once GCT2T_PLUGIN_DIR_LIB . '/class-gc-testimonials-to-testimonials-widget.php';
-
-		register_widget( 'Gc_Testimonials_to_Testimonials_Widget' );
-	}
-
-
 	public static function get_defaults( $single_view = false ) {
 		if ( empty( $single_view ) )
 			return apply_filters( 'gct2t_defaults', gct2t_get_options() );
@@ -639,7 +656,7 @@ register_deactivation_hook( __FILE__, array( 'Gc_Testimonials_to_Testimonials', 
 register_uninstall_hook( __FILE__, array( 'Gc_Testimonials_to_Testimonials', 'uninstall' ) );
 
 
-add_action( 'plugins_loaded', 'wordpress_starter_init', 99 );
+add_action( 'plugins_loaded', 'gc_testimonials_to_testimonials_init', 99 );
 
 
 /**
@@ -648,7 +665,7 @@ add_action( 'plugins_loaded', 'wordpress_starter_init', 99 );
  * @SuppressWarnings(PHPMD.LongVariable)
  * @SuppressWarnings(PHPMD.UnusedLocalVariable)
  */
-function wordpress_starter_init() {
+function gc_testimonials_to_testimonials_init() {
 	if ( ! is_admin() )
 		return;
 
