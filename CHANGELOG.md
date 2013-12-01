@@ -1,6 +1,7 @@
 # CHANGELOG GC Testimonials to Testimonials
 
 ## master
+* Move screenshots to SVN assets
 
 ## 1.0.1
 * Add screenshot 1. GC Testimonials to Testimonials Settings
