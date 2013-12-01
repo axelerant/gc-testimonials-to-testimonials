@@ -1,6 +1,8 @@
 # CHANGELOG GC Testimonials to Testimonials
 
 ## master
+* Add screenshot 1. GC Testimonials to Testimonials Settings
+* Add screenshot 2. GC Testimonials to Testimonials Migrator
 * Rename do_something to migrate_item
 * Update Aihrus Framework
 * Use common helper add_media
