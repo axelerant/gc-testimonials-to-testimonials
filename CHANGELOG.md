@@ -1,7 +1,9 @@
 # CHANGELOG GC Testimonials to Testimonials
 
 ## master
-* TBD
+* Rename do_something to migrate_item
+* Update Aihrus Framework
+* Use common helper add_media
 
 ## 1.0.0
 * Initial code release 

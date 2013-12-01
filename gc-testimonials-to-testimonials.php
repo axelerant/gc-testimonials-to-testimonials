@@ -448,7 +448,7 @@ class Gc_Testimonials_to_Testimonials extends Aihrus_Common {
 		if ( ! $post || ! in_array( $post['post_type'], self::$post_types )  )
 			die( json_encode( array( 'error' => sprintf( esc_html__( 'Failed Migration: %s is incorrect post type.', 'gc-testimonials-to-testimonials' ), esc_html( self::$post_id ) ) ) ) );
 
-		$result = self::do_something( self::$post_id, $post );
+		$result = self::migrate_item( self::$post_id, $post );
 		if ( is_numeric( $result ) )
 			die( json_encode( array( 'success' => sprintf( __( '&quot;<a href="%1$s" target="_blank">%2$s</a>&quot; GC Testimonial ID %3$s was successfully migrated to Testimonials %6$s &quot;<a href="%4$s" target="_blank">%5$s</a>&quot;.', 'gc-testimonials-to-testimonials' ), get_permalink( self::$post_id ), esc_html( get_the_title( self::$post_id ) ), self::$post_id, get_permalink( $result ), esc_html( get_the_title( $result ) ), $result ) ) ) );
 		else
@@ -461,7 +461,7 @@ class Gc_Testimonials_to_Testimonials extends Aihrus_Common {
 	 *
 	 * @SuppressWarnings(PHPMD.UnusedFormalParameter)
 	 */
-	public static function do_something( $post_id, $post ) {
+	public static function migrate_item( $post_id, $post ) {
 		global $wpdb;
 
 		$migrated_key  = '_' . Testimonials_Widget::PT;
@@ -480,8 +480,7 @@ class Gc_Testimonials_to_Testimonials extends Aihrus_Common {
 		if ( $migrated->have_posts() ) {
 			$migrated->the_post();
 
-			// fixme return get_the_ID();
-			wp_delete_post( get_the_ID(), true );
+			return get_the_ID();
 		}
 
 		unset( $post['ID'] );
@@ -529,24 +528,8 @@ class Gc_Testimonials_to_Testimonials extends Aihrus_Common {
 		if ( $thumbnail_id ) {
 			$src   = wp_get_attachment_url( $thumbnail_id );
 			$file  = basename( $src );
-
-			$file_move = wp_upload_bits( $file, null, Testimonials_Widget::file_get_contents_curl( $src ) );
-			$filename  = $file_move['file'];
-
-			$wp_filetype = wp_check_filetype( $file, null );
-			$attachment  = array(
-				'post_mime_type' => $wp_filetype['type'],
-				'post_status' => 'inherit',
-				'post_title' => $file,
-			);
-
-			require_once ABSPATH . 'wp-admin/includes/image.php';
-
-			$image_id = wp_insert_attachment( $attachment, $filename, $new_post_id );
-			$metadata = wp_generate_attachment_metadata( $image_id, $filename );
-
-			wp_update_attachment_metadata( $image_id, $metadata );
-			update_post_meta( $new_post_id, '_thumbnail_id', $image_id );
+			
+			$image_id = self::add_media( $new_post_id, $src );
 		}
 
 		add_post_meta( $new_post_id, $migrated_key, $post_id );
