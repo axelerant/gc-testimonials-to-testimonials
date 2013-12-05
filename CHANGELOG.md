@@ -1,6 +1,9 @@
 # CHANGELOG GC Testimonials to Testimonials
 
 ## master
+
+## 1.0.2
+* Check for PHP 5.3
 * Move screenshots to SVN assets
 
 ## 1.0.1
