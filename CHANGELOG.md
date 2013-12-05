@@ -2,6 +2,9 @@
 
 ## master
 
+## 1.0.3
+* Update Aihrus framework
+
 ## 1.0.2
 * Check for PHP 5.3
 * Move screenshots to SVN assets
