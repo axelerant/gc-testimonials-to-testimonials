@@ -2,9 +2,9 @@
 # This file is distributed under the same license as the GC Testimonials to Testimonials package.
 msgid ""
 msgstr ""
-"Project-Id-Version: GC Testimonials to Testimonials 1.0.1\n"
+"Project-Id-Version: GC Testimonials to Testimonials 1.0.2\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/gc-testimonials-to-testimonials\n"
-"POT-Creation-Date: 2013-12-01 23:04:01+00:00\n"
+"POT-Creation-Date: 2013-12-05 03:09:36+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -12,155 +12,159 @@ msgstr ""
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 
-#: gc-testimonials-to-testimonials.php:72
+#: gc-testimonials-to-testimonials.php:77
 msgid "Settings"
 msgstr ""
 
-#: gc-testimonials-to-testimonials.php:77
-#: gc-testimonials-to-testimonials.php:189
+#: gc-testimonials-to-testimonials.php:82
+#: gc-testimonials-to-testimonials.php:194
 #: lib/class-gc-testimonials-to-testimonials-settings.php:76
 msgid "GC Testimonials to Testimonials Migrator"
 msgstr ""
 
-#: gc-testimonials-to-testimonials.php:77
+#: gc-testimonials-to-testimonials.php:82
 msgid "GCT Migrator"
 msgstr ""
 
-#: gc-testimonials-to-testimonials.php:84
+#: gc-testimonials-to-testimonials.php:89
 #: lib/class-gc-testimonials-to-testimonials-settings.php:68
 msgid "GC Testimonials to Testimonials Settings"
 msgstr ""
 
-#: gc-testimonials-to-testimonials.php:105
+#: gc-testimonials-to-testimonials.php:110
 msgid "Migrate"
 msgstr ""
 
-#: gc-testimonials-to-testimonials.php:181
+#: gc-testimonials-to-testimonials.php:186
 msgid "Your user account doesn't have permission to access this."
 msgstr ""
 
-#: gc-testimonials-to-testimonials.php:207
+#: gc-testimonials-to-testimonials.php:212
 msgid "All done. No posts needing processing found."
 msgstr ""
 
-#: gc-testimonials-to-testimonials.php:271
+#: gc-testimonials-to-testimonials.php:276
 msgid "Use this tool for migrating GC Testimonials entries to Testimonials custom post types."
 msgstr ""
 
-#: gc-testimonials-to-testimonials.php:273
+#: gc-testimonials-to-testimonials.php:278
 msgid "This migration is not reversible. Backup your database beforehand or be prepared to delete each migrated testimonial manually."
 msgstr ""
 
-#: gc-testimonials-to-testimonials.php:275
+#: gc-testimonials-to-testimonials.php:280
 msgid "Please review your %s before proceeding."
 msgstr ""
 
-#: gc-testimonials-to-testimonials.php:277
+#: gc-testimonials-to-testimonials.php:282
 msgid "To begin, just press the button below."
 msgstr ""
 
-#: gc-testimonials-to-testimonials.php:279
+#: gc-testimonials-to-testimonials.php:284
 msgid "Migrate GC Testimonials to Testimonials"
 msgstr ""
 
-#: gc-testimonials-to-testimonials.php:281
-#: gc-testimonials-to-testimonials.php:305
+#: gc-testimonials-to-testimonials.php:286
+#: gc-testimonials-to-testimonials.php:310
 msgid "You must enable Javascript in order to proceed!"
 msgstr ""
 
-#: gc-testimonials-to-testimonials.php:294
+#: gc-testimonials-to-testimonials.php:299
 msgid "Please be patient while this script run. This can take a while, up to a minute per post. Do not navigate away from this page until this script is done or the import will not be completed. You will be notified via this page when the import is completed."
 msgstr ""
 
-#: gc-testimonials-to-testimonials.php:296
+#: gc-testimonials-to-testimonials.php:301
 msgid "Estimated time required to import is %1$s minutes."
 msgstr ""
 
-#: gc-testimonials-to-testimonials.php:298
+#: gc-testimonials-to-testimonials.php:303
 msgid "To go back to the previous page, <a href=\"%s\">click here</a>."
 msgstr ""
 
-#: gc-testimonials-to-testimonials.php:300
+#: gc-testimonials-to-testimonials.php:305
 msgid "All done! %1$s posts were successfully processed in %2$s seconds and there were %3$s failures. To try importing the failed posts again, <a href=\"%4$s\">click here</a>. %5$s"
 msgstr ""
 
-#: gc-testimonials-to-testimonials.php:302
+#: gc-testimonials-to-testimonials.php:307
 msgid "All done! %1$s posts were successfully processed in %2$s seconds and there were no failures. %3$s"
 msgstr ""
 
-#: gc-testimonials-to-testimonials.php:311
+#: gc-testimonials-to-testimonials.php:316
 msgid "Abort Migrating Posts"
 msgstr ""
 
-#: gc-testimonials-to-testimonials.php:313
+#: gc-testimonials-to-testimonials.php:318
 msgid "Status"
 msgstr ""
 
-#: gc-testimonials-to-testimonials.php:316
+#: gc-testimonials-to-testimonials.php:321
 msgid "Total Testimonials: %s"
 msgstr ""
 
-#: gc-testimonials-to-testimonials.php:317
+#: gc-testimonials-to-testimonials.php:322
 msgid "Testimonials Migrated: %s"
 msgstr ""
 
-#: gc-testimonials-to-testimonials.php:318
+#: gc-testimonials-to-testimonials.php:323
 msgid "Migration Failures: %s"
 msgstr ""
 
-#: gc-testimonials-to-testimonials.php:349
+#: gc-testimonials-to-testimonials.php:354
 msgid "Stopping, please wait a moment."
 msgstr ""
 
-#: gc-testimonials-to-testimonials.php:449
+#: gc-testimonials-to-testimonials.php:454
 msgid "Failed Migration: %s is incorrect post type."
 msgstr ""
 
-#: gc-testimonials-to-testimonials.php:453
+#: gc-testimonials-to-testimonials.php:458
 msgid "&quot;<a href=\"%1$s\" target=\"_blank\">%2$s</a>&quot; GC Testimonial ID %3$s was successfully migrated to Testimonials %6$s &quot;<a href=\"%4$s\" target=\"_blank\">%5$s</a>&quot;."
 msgstr ""
 
-#: gc-testimonials-to-testimonials.php:455
+#: gc-testimonials-to-testimonials.php:460
 msgid "&quot;<a href=\"%1$s\" target=\"_blank\">%2$s</a>&quot; Unable to be migrated."
 msgstr ""
 
-#: gc-testimonials-to-testimonials.php:542
+#: gc-testimonials-to-testimonials.php:547
 msgid "If your Migrate GC Testimonials to Testimonials display has gone to funky town, please <a href=\"%s\">read the FAQ</a> about possible CSS fixes."
 msgstr ""
 
-#: lib/aihrus/class-aihrus-common.php:116
+#: lib/aihrus/class-aihrus-common.php:50
+msgid "Plugin \"%1$s\" requires at least PHP %2$s, you're running PHP %4$s. See <a href=\"%3$s\">possible solutions</a>. Once fixed, \"%1$s\" can be activated again.."
+msgstr ""
+
+#: lib/aihrus/class-aihrus-common.php:160
 msgid "<a href=\"%1$s\">update to</a>"
 msgstr ""
 
-#: lib/aihrus/class-aihrus-common.php:121
+#: lib/aihrus/class-aihrus-common.php:165
 msgid "<a href=\"%1$s\">install</a>"
 msgstr ""
 
-#: lib/aihrus/class-aihrus-common.php:124
+#: lib/aihrus/class-aihrus-common.php:168
 msgid "<a href=\"%1$s\">activate</a>"
 msgstr ""
 
-#: lib/aihrus/class-aihrus-common.php:128
+#: lib/aihrus/class-aihrus-common.php:172
 msgid "Plugin %3$s has been deactivated. Please %1$s %4$s version %2$s or newer before activating %3$s."
 msgstr ""
 
-#: lib/aihrus/class-aihrus-common.php:140
+#: lib/aihrus/class-aihrus-common.php:184
 msgid "<a href=\"%1$s\">%2$s &gt; Settings</a>, <em>Premium</em> tab, <em>License Key</em> entry"
 msgstr ""
 
-#: lib/aihrus/class-aihrus-common.php:145
+#: lib/aihrus/class-aihrus-common.php:189
 msgid "<a href=\"%s\">Where's my license key?</a>"
 msgstr ""
 
-#: lib/aihrus/class-aihrus-common.php:150
+#: lib/aihrus/class-aihrus-common.php:194
 msgid "<a href=\"%1$s\">%2$s</a>"
 msgstr ""
 
-#: lib/aihrus/class-aihrus-common.php:154
+#: lib/aihrus/class-aihrus-common.php:198
 msgid "Plugin %1$s requires license activation before updating will work. Please activate the license key via %2$s. No license key? See %3$s or purchase %4$s."
 msgstr ""
 
-#: lib/aihrus/class-aihrus-common.php:200
+#: lib/aihrus/class-aihrus-common.php:244
 msgid "Please donate $5 towards ongoing free support and development of the %1$s plugin. %2$s"
 msgstr ""
 
@@ -192,35 +196,35 @@ msgstr ""
 msgid "Delete all %s data and options from database on plugin deletion"
 msgstr ""
 
-#: lib/aihrus/class-aihrus-settings.php:99
+#: lib/aihrus/class-aihrus-settings.php:100
 msgid "Remove Plugin Data on Deletion?"
 msgstr ""
 
-#: lib/aihrus/class-aihrus-settings.php:108
+#: lib/aihrus/class-aihrus-settings.php:109
 msgid "Reset to Defaults?"
 msgstr ""
 
-#: lib/aihrus/class-aihrus-settings.php:111
+#: lib/aihrus/class-aihrus-settings.php:112
 msgid "Check this box to reset options to their defaults"
 msgstr ""
 
-#: lib/aihrus/class-aihrus-settings.php:235
+#: lib/aihrus/class-aihrus-settings.php:236
 msgid "<img class=\"alignright size-medium\" src=\"%1$s/media/michael-cannon-red-square-300x2251.jpg\" alt=\"Michael in Red Square, Moscow, Russia\" width=\"300\" height=\"225\" /><a href=\"%2$s\">%3$s</a> is by <a href=\"%4$s\">Michael Cannon</a>. He's <a href=\"%5$s\">Peichi’s</a> smiling man, an adventurous <a href=\"%6$s\" target=\"_blank\">water-rat</a>, <a href=\"%7$s\">chief people officer</a>, <a href=\"%8$s\">cyclist</a>, <a href=\"%9$s\">full stack developer</a>, <a href=\"%10$s\">poet</a>, <a href=\"%11$s\">WWOOF’er</a> and <a href=\"%12$s\">world traveler</a>."
 msgstr ""
 
-#: lib/aihrus/class-aihrus-settings.php:277
+#: lib/aihrus/class-aihrus-settings.php:278
 msgid "Save Changes"
 msgstr ""
 
-#: lib/aihrus/class-aihrus-settings.php:285
+#: lib/aihrus/class-aihrus-settings.php:286
 msgid "If you like this plugin, please <a href=\"%1$s\" title=\"Donate for Good Karma\"><img src=\"%2$s\" border=\"0\" alt=\"Donate for Good Karma\" /></a> or <a href=\"%3$s\" title=\"purchase premium WordPress plugins from Aihrus \">purchase the Premium version</a> to help fund further development and <a href=\"%4$s\" title=\"Support forums\">support</a>."
 msgstr ""
 
-#: lib/aihrus/class-aihrus-settings.php:296
+#: lib/aihrus/class-aihrus-settings.php:297
 msgid "Copyright &copy;%1$s <a href=\"%2$s\">Aihrus</a>."
 msgstr ""
 
-#: lib/aihrus/class-aihrus-settings.php:597
+#: lib/aihrus/class-aihrus-settings.php:598
 msgid "Required"
 msgstr ""
 
