@@ -31,6 +31,11 @@ if ( ! defined( 'GCT2T_PLUGIN_DIR_LIB' ) )
 
 require_once GCT2T_PLUGIN_DIR_LIB . '/aihrus/class-aihrus-common.php';
 
+if ( af_php_version_check( __FILE__ ) )
+	add_action( 'plugins_loaded', 'gc_testimonials_to_testimonials_init', 99 );
+else
+	return;
+
 
 class Gc_Testimonials_to_Testimonials extends Aihrus_Common {
 	const FREE_PLUGIN_BASE = 'testimonials-widget/testimonials-widget.php';
@@ -704,9 +709,6 @@ class Gc_Testimonials_to_Testimonials extends Aihrus_Common {
 register_activation_hook( __FILE__, array( 'Gc_Testimonials_to_Testimonials', 'activation' ) );
 register_deactivation_hook( __FILE__, array( 'Gc_Testimonials_to_Testimonials', 'deactivation' ) );
 register_uninstall_hook( __FILE__, array( 'Gc_Testimonials_to_Testimonials', 'uninstall' ) );
-
-
-add_action( 'plugins_loaded', 'gc_testimonials_to_testimonials_init', 99 );
 
 
 /**
