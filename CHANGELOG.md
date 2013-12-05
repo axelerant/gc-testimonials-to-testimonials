@@ -2,6 +2,9 @@
 
 ## master
 
+## 1.0.4
+* Update Aihrus framework
+
 ## 1.0.3
 * Update Aihrus framework
 
