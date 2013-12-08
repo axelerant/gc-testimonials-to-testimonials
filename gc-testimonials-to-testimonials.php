@@ -1,8 +1,8 @@
 <?php
 /**
- * Plugin Name: GC Testimonials to Testimonials
+ * Plugin Name: GC Testimonials to Testimonials by Aihrus
  * Plugin URI: http://wordpress.org/plugins/gc-testimonials-to-testimonials/
- * Description: Migrate GC Testimonials entries to Testimonials custom post types.
+ * Description: Migrate GC Testimonials entries to Testimonials by Aihrus custom post types.
  * Version: 1.0.4
  * Author: Michael Cannon
  * Author URI: http://aihr.us/resume/
@@ -43,7 +43,7 @@ class Gc_Testimonials_to_Testimonials extends Aihrus_Common {
 
 	const GCT_PT      = 'testimonial';
 	const ID          = 'gc-testimonials-to-testimonials';
-	const ITEM_NAME   = 'GC Testimonials to Testimonials';
+	const ITEM_NAME   = 'GC Testimonials to Testimonials by Aihrus';
 	const PLUGIN_BASE = 'gc-testimonials-to-testimonials/gc-testimonials-to-testimonials.php';
 	const SLUG        = 'gct2t_';
 	const VERSION     = '1.0.4';

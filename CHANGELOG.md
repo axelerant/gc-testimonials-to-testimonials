@@ -1,6 +1,8 @@
 # CHANGELOG GC Testimonials to Testimonials
 
 ## master
+* Convert TODO to https://github.com/michael-cannon/gc-testimonials-to-testimonials/issues
+* Revise readme structure
 
 ## 1.0.4
 * Update Aihrus framework
