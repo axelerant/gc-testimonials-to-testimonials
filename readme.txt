@@ -65,7 +65,7 @@ Migrate GC Testimonials entries to Testimonials [by Aihrus](http://aihr.us/about
 = Usage =
 
 1. Edit options through WordPress Admin > Testimonials > GCT Settings
-1. Migrate GC Testimonials via WP Admin > Testimonials > GCT Migrator
+1. Migrate GC Testimonials via WordPress Admin > Testimonials > GCT Migrator
 
 
 = Upgrading =
