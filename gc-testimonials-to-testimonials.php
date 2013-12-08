@@ -635,7 +635,7 @@ class Gc_Testimonials_to_Testimonials extends Aihrus_Common {
 
 	public static function notice_version( $free_base = null, $free_name = null, $free_slug = null, $free_version = null, $item_name = null ) {
 		$free_base    = self::FREE_PLUGIN_BASE;
-	   	$free_name    = 'Testimonials';
+	   	$free_name    = 'Testimonials by Aihrus';
 		$free_slug    = 'testimonials-widget';
 		$free_version = self::FREE_VERSION;
 		$item_name    = self::ITEM_NAME;
