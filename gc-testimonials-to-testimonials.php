@@ -136,6 +136,8 @@ class Gc_Testimonials_to_Testimonials extends Aihrus_Common {
 			return;
 
 		global $wpdb;
+		
+		require GCT2T_DIR_LIB . '/class-gc-testimonials-to-testimonials-settings.php';
 
 		$delete_data = gct2t_get_option( 'delete_data', false );
 		if ( $delete_data ) {
