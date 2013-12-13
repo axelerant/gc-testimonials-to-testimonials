@@ -34,14 +34,14 @@ define( 'GCT2T_REQ_SLUG', 'testimonials-widget' );
 define( 'GCT2T_REQ_VERSION', '2.17.0' );
 define( 'GCT2T_VERSION', '1.1.0' );
 
-require GCT2T_DIR_LIB . '/requirements.php';
+require_once GCT2T_DIR_LIB . '/requirements.php';
 
 if ( ! gct2t_requirements_check() ) {
 	return false;
 }
 
-require GCT2T_DIR_LIB . '/aihrus/class-aihrus-common.php';
-require GCT2T_DIR_LIB . '/class-gc-testimonials-to-testimonials-settings.php';
+require_once GCT2T_DIR_LIB . '/aihrus/class-aihrus-common.php';
+require_once GCT2T_DIR_LIB . '/class-gc-testimonials-to-testimonials-settings.php';
 
 
 class Gc_Testimonials_to_Testimonials extends Aihrus_Common {
@@ -137,7 +137,7 @@ class Gc_Testimonials_to_Testimonials extends Aihrus_Common {
 
 		global $wpdb;
 		
-		require GCT2T_DIR_LIB . '/class-gc-testimonials-to-testimonials-settings.php';
+		require_once GCT2T_DIR_LIB . '/class-gc-testimonials-to-testimonials-settings.php';
 
 		$delete_data = gct2t_get_option( 'delete_data', false );
 		if ( $delete_data ) {
@@ -711,7 +711,7 @@ function gc_testimonials_to_testimonials_init() {
 		return;
 
 	if ( ! function_exists( 'add_screen_meta_link' ) )
-		require GCT2T_DIR_LIB . '/screen-meta-links.php';
+		require_once GCT2T_DIR_LIB . '/screen-meta-links.php';
 
 	if ( Gc_Testimonials_to_Testimonials::version_check() ) {
 		global $Gc_Testimonials_to_Testimonials;
