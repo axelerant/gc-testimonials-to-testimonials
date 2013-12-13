@@ -78,7 +78,7 @@ Migrate GC Testimonials entries to Testimonials [by Aihrus](http://aihr.us/about
 	* Select plugins for update, click "Update Plugins"
 * Using FTP
 	* Download and unzip [`gc-testimonials-to-testimonials.zip`](http://downloads.wordpress.org/plugin/gc-testimonials-to-testimonials.zip) locally
-	* FTP, upload directory `gc-testimonials-to-testimonials` to your website's `/wp-content/plugins/` directory
+	* Upload directory `gc-testimonials-to-testimonials` to your website's `/wp-content/plugins/` directory
 	* Be sure to overwrite your existing `gc-testimonials-to-testimonials` folder contents
 
 
