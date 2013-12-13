@@ -3,7 +3,7 @@
  * Plugin Name: GC Testimonials to Testimonials by Aihrus
  * Plugin URI: http://wordpress.org/plugins/gc-testimonials-to-testimonials/
  * Description: Migrate GC Testimonials entries to Testimonials by Aihrus custom post types.
- * Version: 1.0.4
+ * Version: 1.1.0
  * Author: Michael Cannon
  * Author URI: http://aihr.us/resume/
  * License: GPLv2 or later
@@ -23,30 +23,34 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
  */
-if ( ! defined( 'GCT2T_PLUGIN_DIR' ) )
-	define( 'GCT2T_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 
-if ( ! defined( 'GCT2T_PLUGIN_DIR_LIB' ) )
-	define( 'GCT2T_PLUGIN_DIR_LIB', GCT2T_PLUGIN_DIR . '/lib' );
+define( 'GCT2T_BASE', plugin_basename( __FILE__ ) );
+define( 'GCT2T_DIR', plugin_dir_path( __FILE__ ) );
+define( 'GCT2T_DIR_LIB', GCT2T_DIR . '/lib' );
+define( 'GCT2T_NAME', 'GC Testimonials to Testimonials by Aihrus' );
+define( 'GCT2T_REQ_BASE', 'testimonials-widget/testimonials-widget.php' );
+define( 'GCT2T_REQ_NAME', 'Testimonials by Aihrus' );
+define( 'GCT2T_REQ_SLUG', 'testimonials-widget' );
+define( 'GCT2T_REQ_VERSION', '2.17.0' );
+define( 'GCT2T_VERSION', '1.1.0' );
 
-require_once GCT2T_PLUGIN_DIR_LIB . '/aihrus/class-aihrus-common.php';
+require GCT2T_DIR_LIB . '/requirements.php';
 
-if ( af_php_version_check( __FILE__ ) )
-	add_action( 'plugins_loaded', 'gc_testimonials_to_testimonials_init', 99 );
-else
-	return;
+if ( ! gct2t_requirements_check() ) {
+	return false;
+}
+
+require GCT2T_DIR_LIB . '/aihrus/class-aihrus-common.php';
+require GCT2T_DIR_LIB . '/class-gc-testimonials-to-testimonials-settings.php';
 
 
 class Gc_Testimonials_to_Testimonials extends Aihrus_Common {
-	const FREE_PLUGIN_BASE = 'testimonials-widget/testimonials-widget.php';
-	const FREE_VERSION     = '2.16.6';
+	const BASE    = GCT2T_BASE;
+	const ID      = 'gc-testimonials-to-testimonials';
+	const SLUG    = 'gct2t_';
+	const VERSION = GCT2T_VERSION;
 
-	const GCT_PT      = 'testimonial';
-	const ID          = 'gc-testimonials-to-testimonials';
-	const ITEM_NAME   = 'GC Testimonials to Testimonials by Aihrus';
-	const PLUGIN_BASE = 'gc-testimonials-to-testimonials/gc-testimonials-to-testimonials.php';
-	const SLUG        = 'gct2t_';
-	const VERSION     = '1.0.4';
+	const GCT_PT = 'testimonial';
 
 	private static $post_types;
 
@@ -104,7 +108,7 @@ class Gc_Testimonials_to_Testimonials extends Aihrus_Common {
 
 
 	public static function plugin_action_links( $links, $file ) {
-		if ( self::PLUGIN_BASE == $file ) {
+		if ( self::BASE == $file ) {
 			array_unshift( $links, self::$settings_link );
 
 			$link = '<a href="' . get_admin_url() . 'edit.php?post_type=' . Testimonials_Widget::PT . '&page=' . self::ID . '">' . esc_html__( 'Migrate', 'gc-testimonials-to-testimonials' ) . '</a>';
@@ -118,20 +122,12 @@ class Gc_Testimonials_to_Testimonials extends Aihrus_Common {
 	public static function activation() {
 		if ( ! current_user_can( 'activate_plugins' ) )
 			return;
-
-		if ( ! is_plugin_active( Gc_Testimonials_to_Testimonials::FREE_PLUGIN_BASE ) ) {
-			deactivate_plugins( Gc_Testimonials_to_Testimonials::PLUGIN_BASE );
-			add_action( 'admin_notices', array( 'Gc_Testimonials_to_Testimonials', 'notice_version' ) );
-			return;
-		}
 	}
 
 
 	public static function deactivation() {
 		if ( ! current_user_can( 'activate_plugins' ) )
 			return;
-
-		Gc_Testimonials_to_Testimonials::delete_notices();
 	}
 
 
@@ -141,7 +137,6 @@ class Gc_Testimonials_to_Testimonials extends Aihrus_Common {
 
 		global $wpdb;
 
-		require_once GCT2T_PLUGIN_DIR_LIB . '/class-gc-testimonials-to-testimonials-settings.php';
 		$delete_data = gct2t_get_option( 'delete_data', false );
 		if ( $delete_data ) {
 			delete_option( Gc_Testimonials_to_Testimonials_Settings::ID );
@@ -151,7 +146,7 @@ class Gc_Testimonials_to_Testimonials extends Aihrus_Common {
 
 
 	public static function plugin_row_meta( $input, $file ) {
-		if ( self::PLUGIN_BASE != $file )
+		if ( self::BASE != $file )
 			return $input;
 
 		$disable_donate = gct2t_get_option( 'disable_donate' );
@@ -558,7 +553,7 @@ class Gc_Testimonials_to_Testimonials extends Aihrus_Common {
 	public static function notice_donate( $disable_donate = null, $item_name = null ) {
 		$disable_donate = gct2t_get_option( 'disable_donate' );
 
-		parent::notice_donate( $disable_donate, self::ITEM_NAME );
+		parent::notice_donate( $disable_donate, GCT2T_NAME );
 	}
 
 
@@ -610,37 +605,26 @@ class Gc_Testimonials_to_Testimonials extends Aihrus_Common {
 
 
 	public static function version_check() {
-		require_once ABSPATH . 'wp-admin/includes/plugin.php';
+		$valid_version = true;
 
-		$base         = self::PLUGIN_BASE;
-		$good_version = true;
-
-		if ( ! is_plugin_active( $base ) )
-			$good_version = false;
-
-		if ( is_plugin_inactive( self::FREE_PLUGIN_BASE ) || Testimonials_Widget::VERSION < self::FREE_VERSION )
-			$good_version = false;
-
-		if ( ! $good_version && is_plugin_active( $base ) ) {
-			deactivate_plugins( $base );
-			self::set_notice( 'notice_version' );
+		$valid_base = true;
+		if ( ! defined( 'TW_VERSION' ) ) {
+			$valid_base = false;
+		} elseif ( ! version_compare( TW_VERSION, GCT2T_REQ_VERSION, '>=' ) ) {
+			$valid_base = false;
 		}
 
-		if ( ! $good_version )
+		if ( ! $valid_base ) {
+			$valid_version = false;
+			self::set_notice( 'gct2t_notice_version' );
+		}
+
+		if ( ! $valid_version ) {
+			deactivate_plugins( self::BASE );
 			self::check_notices();
+		}
 
-		return $good_version;
-	}
-
-
-	public static function notice_version( $free_base = null, $free_name = null, $free_slug = null, $free_version = null, $item_name = null ) {
-		$free_base    = self::FREE_PLUGIN_BASE;
-	   	$free_name    = 'Testimonials by Aihrus';
-		$free_slug    = 'testimonials-widget';
-		$free_version = self::FREE_VERSION;
-		$item_name    = self::ITEM_NAME;
-
-		parent::notice_version( $free_base, $free_name, $free_slug, $free_version, $item_name );
+		return $valid_version;
 	}
 
 
@@ -711,6 +695,9 @@ register_deactivation_hook( __FILE__, array( 'Gc_Testimonials_to_Testimonials', 
 register_uninstall_hook( __FILE__, array( 'Gc_Testimonials_to_Testimonials', 'uninstall' ) );
 
 
+add_action( 'plugins_loaded', 'gc_testimonials_to_testimonials_init', 99 );
+
+
 /**
  *
  *
@@ -722,11 +709,9 @@ function gc_testimonials_to_testimonials_init() {
 		return;
 
 	if ( ! function_exists( 'add_screen_meta_link' ) )
-		require_once GCT2T_PLUGIN_DIR_LIB . '/screen-meta-links.php';
+		require GCT2T_DIR_LIB . '/screen-meta-links.php';
 
 	if ( Gc_Testimonials_to_Testimonials::version_check() ) {
-		require_once GCT2T_PLUGIN_DIR_LIB . '/class-gc-testimonials-to-testimonials-settings.php';
-
 		global $Gc_Testimonials_to_Testimonials;
 		if ( is_null( $Gc_Testimonials_to_Testimonials ) )
 			$Gc_Testimonials_to_Testimonials = new Gc_Testimonials_to_Testimonials();

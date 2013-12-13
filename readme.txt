@@ -4,8 +4,8 @@ Contributors: comprock
 Donate link: http://aihr.us/about-aihrus/donate/
 Tags: gc testimonials, migration, convert, testimonials, testimonials widget
 Requires at least: 3.6
-Tested up to: 3.8.0
-Stable tag: 1.0.4
+Tested up to: 3.9.0
+Stable tag: 1.1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -42,6 +42,11 @@ Migrate GC Testimonials entries to Testimonials [by Aihrus](http://aihr.us/about
 
 == Installation ==
 
+= Requirements =
+
+* PHP 5.3+ [Read notice](https://aihrus.zendesk.com/entries/30678006)
+* Plugin "[Testimonials by Aihrus](http://wordpress.org/plugins/testimonials-widget/)" is required to be installed and activated prior to activating "GC Testimonials to Testimonials".
+
 = Install Methods =
 
 * Through WordPress Admin > Plugins > Add New, Search for "GC Testimonials to Testimonials"
@@ -55,9 +60,7 @@ Migrate GC Testimonials entries to Testimonials [by Aihrus](http://aihr.us/about
 * Download and unzip [`gc-testimonials-to-testimonials.zip`](http://downloads.wordpress.org/plugin/gc-testimonials-to-testimonials.zip) locally
 	* Using FTP, upload directory `gc-testimonials-to-testimonials` to your website's `/wp-content/plugins/` directory
 
-= Activatation Options =
-
-**Plugin "[Testimonials by Aihrus](http://wordpress.org/plugins/testimonials-widget/)" is required to be installed and activated prior to activating "GC Testimonials to Testimonials".**
+= Activation Options =
 
 * Activate the "GC Testimonials to Testimonials" plugin after uploading
 * Activate the "GC Testimonials to Testimonials" plugin through WordPress Admin > Plugins
