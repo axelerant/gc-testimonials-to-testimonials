@@ -1,6 +1,7 @@
 # CHANGELOG GC Testimonials to Testimonials
 
 ## master
+* Branding update
 
 ## 1.1.0
 * Convert TODO to https://github.com/michael-cannon/gc-testimonials-to-testimonials/issues

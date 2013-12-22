@@ -14,13 +14,13 @@ Migrate GC Testimonials entries to Testimonials by Aihrus custom post types.
 
 == Description ==
 
-Migrate GC Testimonials entries to Testimonials [by Aihrus](http://aihr.us/about-aihrus/) custom post types for use by the best WordPress testimonials plugin there is, [Testimonials](http://wordpress.org/extend/plugins/testimonials-widget/).
+Migrate GC Testimonials entries to Testimonials [by Aihrus](http://aihr.us/about-aihrus/) custom post types for use by the best WordPress testimonials plugin there is, [Testimonials by Aihrus](http://wordpress.org/extend/plugins/testimonials-widget/).
 
 = Primary Features =
 
 * API
 * Ajax based processing screen
-* Migrates GC Testimonial fields, categories, and images to Testimonials format
+* Migrates GC Testimonial fields, categories, and images to Testimonials by Aihrus format
 * Settings export/import
 * Settings screen
 
