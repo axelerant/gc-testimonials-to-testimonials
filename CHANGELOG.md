@@ -2,6 +2,9 @@
 
 ## master
 * Branding update
+* BUGFIX Disable donate doesn't work
+* Show premium link when its not activated
+* Use aihr_check_aihrus_framework
 
 ## 1.1.0
 * Convert TODO to https://github.com/michael-cannon/gc-testimonials-to-testimonials/issues

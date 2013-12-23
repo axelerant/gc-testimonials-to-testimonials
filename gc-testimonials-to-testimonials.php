@@ -24,6 +24,7 @@
  * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
  */
 
+define( 'GCT2T_AIHR_VERSION', '1.0.0' );
 define( 'GCT2T_BASE', plugin_basename( __FILE__ ) );
 define( 'GCT2T_DIR', plugin_dir_path( __FILE__ ) );
 define( 'GCT2T_DIR_LIB', GCT2T_DIR . '/lib' );
@@ -151,13 +152,17 @@ class Gc_Testimonials_to_Testimonials extends Aihrus_Common {
 		if ( self::BASE != $file )
 			return $input;
 
-		$disable_donate = gct2t_get_option( 'disable_donate' );
+		$disable_donate = tw_get_option( 'disable_donate' );
 		if ( $disable_donate )
 			return $input;
 
 		$links = array(
-			'<a href="http://aihr.us/about-aihrus/donate/"><img src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" alt="PayPal - The safer, easier way to pay online!" /></a>',
+			self::$donate_link,
 		);
+
+		global $TW_Premium;
+		if ( ! isset( $TW_Premium ) )
+			$links[] = TW_PREMIUM_LINK;
 
 		$input = array_merge( $input, $links );
 
@@ -553,7 +558,7 @@ class Gc_Testimonials_to_Testimonials extends Aihrus_Common {
 	 * @SuppressWarnings(PHPMD.UnusedFormalParameter)
 	 */
 	public static function notice_donate( $disable_donate = null, $item_name = null ) {
-		$disable_donate = gct2t_get_option( 'disable_donate' );
+		$disable_donate = tw_get_option( 'disable_donate' );
 
 		parent::notice_donate( $disable_donate, GCT2T_NAME );
 	}

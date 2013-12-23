@@ -152,7 +152,7 @@ class Gc_Testimonials_to_Testimonials_Settings extends Aihrus_Settings {
 
 
 	public static function display_page( $disable_donate = false ) {
-		$disable_donate = gct2t_get_option( 'disable_donate' );
+		$disable_donate = tw_get_option( 'disable_donate' );
 
 		parent::display_page( $disable_donate );
 	}
