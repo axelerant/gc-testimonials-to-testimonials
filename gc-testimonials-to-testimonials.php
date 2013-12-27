@@ -24,7 +24,7 @@
  * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
  */
 
-define( 'GCT2T_AIHR_VERSION', '1.0.0' );
+define( 'GCT2T_AIHR_VERSION', '1.0.1' );
 define( 'GCT2T_BASE', plugin_basename( __FILE__ ) );
 define( 'GCT2T_DIR', plugin_dir_path( __FILE__ ) );
 define( 'GCT2T_DIR_LIB', GCT2T_DIR . '/lib' );
@@ -615,7 +615,9 @@ class Gc_Testimonials_to_Testimonials extends Aihrus_Common {
 		$valid_version = true;
 
 		$valid_base = true;
-		if ( ! defined( 'TW_VERSION' ) ) {
+		if ( ! is_plugin_active( GCT2T_REQ_BASE ) ) {
+			$valid_base = false;
+		} elseif ( ! defined( 'TW_VERSION' ) ) {
 			$valid_base = false;
 		} elseif ( ! version_compare( TW_VERSION, GCT2T_REQ_VERSION, '>=' ) ) {
 			$valid_base = false;

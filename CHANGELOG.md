@@ -1,8 +1,9 @@
 # CHANGELOG GC Testimonials to Testimonials by Aihrus
 
 ## master
-* Branding update
 * BUGFIX Disable donate doesn't work
+* BUGFIX Fatal error due to inactive REQ_BASE via old Aihrus Framework
+* Branding update
 * Show premium link when its not activated
 * Use aihr_check_aihrus_framework
 

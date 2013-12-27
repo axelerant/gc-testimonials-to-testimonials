@@ -32,13 +32,13 @@ class Gc_Testimonials_to_Testimonials_Settings extends Aihrus_Settings {
 	const ID   = 'gc-testimonials-to-testimonials-settings';
 	const NAME = 'GC Testimonials to Testimonials Settings';
 
-	public static $admin_page  = '';
-	public static $class       = __CLASS__;
-	public static $defaults    = array();
-	public static $plugin_url  = 'http://wordpress.org/plugins/gc-testimonials-to-testimonials/';
-	public static $plugin_path = array();
-	public static $sections    = array();
-	public static $settings    = array();
+	public static $admin_page;
+	public static $class      = __CLASS__;
+	public static $defaults   = array();
+	public static $plugin_url = 'http://wordpress.org/plugins/gc-testimonials-to-testimonials/';
+	public static $plugin_path;
+	public static $sections = array();
+	public static $settings = array();
 	public static $version;
 
 
@@ -87,7 +87,10 @@ class Gc_Testimonials_to_Testimonials_Settings extends Aihrus_Settings {
 	public static function init() {
 		load_plugin_textdomain( 'gc-testimonials-to-testimonials', false, '/gc-testimonials-to-testimonials/languages/' );
 
-		self::$plugin_path = plugins_url( '', dirname( __FILE__ ) );
+		$plugin_path = plugins_url( '', dirname( __FILE__ ) );
+		$plugin_path = Gc_Testimonials_to_Testimonials::strip_protocol( $plugin_path );
+
+		self::$plugin_path = $plugin_path;
 	}
 
 
