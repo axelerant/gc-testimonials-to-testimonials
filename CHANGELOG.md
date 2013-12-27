@@ -1,4 +1,4 @@
-# CHANGELOG GC Testimonials to Testimonials
+# CHANGELOG GC Testimonials to Testimonials by Aihrus
 
 ## master
 * Branding update
