@@ -22,10 +22,10 @@
  * Based upon http://alisothegeek.com/2011/01/wordpress-settings-api-tutorial-1/
  */
 
+require_once GCT2T_DIR_LIB . '/aihrus/class-aihrus-settings.php';
+
 if ( class_exists( 'Gc_Testimonials_to_Testimonials_Settings' ) )
 	return;
-
-require_once GCT2T_DIR_LIB . '/aihrus/class-aihrus-settings.php';
 
 
 class Gc_Testimonials_to_Testimonials_Settings extends Aihrus_Settings {
