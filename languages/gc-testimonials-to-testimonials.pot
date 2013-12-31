@@ -2,9 +2,9 @@
 # This file is distributed under the same license as the GC Testimonials to Testimonials by Aihrus package.
 msgid ""
 msgstr ""
-"Project-Id-Version: GC Testimonials to Testimonials by Aihrus 1.1.1\n"
+"Project-Id-Version: GC Testimonials to Testimonials by Aihrus 1.1.2\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/gc-testimonials-to-testimonials\n"
-"POT-Creation-Date: 2013-12-30 06:58:00+00:00\n"
+"POT-Creation-Date: 2013-12-31 00:36:55+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
