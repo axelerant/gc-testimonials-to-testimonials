@@ -2,6 +2,9 @@
 
 ## master
 
+## 1.1.2
+* RESOLVE load precedence issue
+
 ## 1.1.1
 * Branding update
 * BUGFIX Disable donate doesn't work
