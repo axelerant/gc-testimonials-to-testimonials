@@ -1,6 +1,8 @@
 # CHANGELOG GC Testimonials to Testimonials by Aihrus
 
 ## master
+* Remove Travis config
+* Specify a “Text Domain” and “Domain Path”
 
 ## 1.1.2
 * RESOLVE load precedence issue
