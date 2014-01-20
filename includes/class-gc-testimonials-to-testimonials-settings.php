@@ -22,7 +22,7 @@
  * Based upon http://alisothegeek.com/2011/01/wordpress-settings-api-tutorial-1/
  */
 
-require_once GCT2T_DIR_LIB . '/aihrus/class-aihrus-settings.php';
+require_once TW_DIR_LIB . 'aihrus-framework/class-aihrus-settings.php';
 
 if ( class_exists( 'Gc_Testimonials_to_Testimonials_Settings' ) )
 	return;
@@ -33,10 +33,10 @@ class Gc_Testimonials_to_Testimonials_Settings extends Aihrus_Settings {
 	const NAME = 'GC Testimonials to Testimonials Settings';
 
 	public static $admin_page;
-	public static $class      = __CLASS__;
-	public static $defaults   = array();
+	public static $class    = __CLASS__;
+	public static $defaults = array();
+	public static $plugin_assets;
 	public static $plugin_url = 'http://wordpress.org/plugins/gc-testimonials-to-testimonials/';
-	public static $plugin_path;
 	public static $sections = array();
 	public static $settings = array();
 	public static $version;
@@ -87,10 +87,7 @@ class Gc_Testimonials_to_Testimonials_Settings extends Aihrus_Settings {
 	public static function init() {
 		load_plugin_textdomain( 'gc-testimonials-to-testimonials', false, '/gc-testimonials-to-testimonials/languages/' );
 
-		$plugin_path = plugins_url( '', dirname( __FILE__ ) );
-		$plugin_path = Gc_Testimonials_to_Testimonials::strip_protocol( $plugin_path );
-
-		self::$plugin_path = $plugin_path;
+		self::$plugin_assets = Gc_Testimonials_to_Testimonials::$plugin_assets;
 	}
 
 

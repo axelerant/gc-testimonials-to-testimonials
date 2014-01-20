@@ -1,8 +1,15 @@
 # CHANGELOG GC Testimonials to Testimonials by Aihrus
 
 ## master
+* Move ci to tests
+* Move CSS to assets
+* Move files to assets
+* Move lib to includes/libraries
+* Move main class to own class file
 * Remove Travis config
+* Revise required file paths
 * Specify a “Text Domain” and “Domain Path”
+* Use $plugin_assets than $plugin_path
 
 ## 1.1.2
 * RESOLVE load precedence issue
