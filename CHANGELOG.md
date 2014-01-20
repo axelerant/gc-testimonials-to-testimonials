@@ -1,6 +1,8 @@
 # CHANGELOG GC Testimonials to Testimonials by Aihrus
 
 ## master
+
+## 1.2.0
 * Move ci to tests
 * Move CSS to assets
 * Move files to assets
