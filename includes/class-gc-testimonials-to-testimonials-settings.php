@@ -22,7 +22,13 @@
  * Based upon http://alisothegeek.com/2011/01/wordpress-settings-api-tutorial-1/
  */
 
-require_once TW_DIR_LIB . 'aihrus-framework/class-aihrus-settings.php';
+if ( defined( 'TW_DIR_LIB' ) ) {
+	$plugin_base = TW_DIR_LIB;
+} else {
+	$plugin_base = WP_PLUGIN_DIR . '/testimonials-widget/includes/libraries/';
+}
+
+require_once $plugin_base . 'aihrus-framework/class-aihrus-settings.php';
 
 if ( class_exists( 'Gc_Testimonials_to_Testimonials_Settings' ) )
 	return;

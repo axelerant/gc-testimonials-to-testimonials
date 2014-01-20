@@ -8,6 +8,7 @@
 * Move main class to own class file
 * Remove Travis config
 * Revise required file paths
+* Revise required_once for Aihrus Framework
 * Specify a “Text Domain” and “Domain Path”
 * Use $plugin_assets than $plugin_path
 

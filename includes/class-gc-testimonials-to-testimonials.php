@@ -13,7 +13,13 @@
  * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
  */
 
-require_once TW_DIR_LIB . 'aihrus-framework/class-aihrus-common.php';
+if ( defined( 'TW_DIR_LIB' ) ) {
+	$plugin_base = TW_DIR_LIB;
+} else {
+	$plugin_base = WP_PLUGIN_DIR . '/testimonials-widget/includes/libraries/';
+}
+
+require_once $plugin_base . 'aihrus-framework/class-aihrus-common.php';
 require_once GCT2T_DIR_INC . 'class-gc-testimonials-to-testimonials-settings.php';
 
 if ( class_exists( 'Gc_Testimonials_to_Testimonials' ) )

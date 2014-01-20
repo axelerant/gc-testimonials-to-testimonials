@@ -26,7 +26,6 @@
  * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
  */
 
-define( 'GCT2T_AIHR_VERSION', '1.0.1' );
 define( 'GCT2T_BASE', plugin_basename( __FILE__ ) );
 define( 'GCT2T_DIR', plugin_dir_path( __FILE__ ) );
 define( 'GCT2T_DIR_INC', GCT2T_DIR . 'includes/' );
@@ -47,7 +46,7 @@ if ( ! gct2t_requirements_check() ) {
 
 require_once GCT2T_DIR_INC . 'class-gc-testimonials-to-testimonials.php';
 
-add_action( 'plugins_loaded', 'gc_testimonials_to_testimonials_init', 199 );
+add_action( 'plugins_loaded', 'gc_testimonials_to_testimonials_init', 99 );
 
 
 /**
