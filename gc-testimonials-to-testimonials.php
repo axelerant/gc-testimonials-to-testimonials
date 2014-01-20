@@ -38,6 +38,12 @@ define( 'GCT2T_REQ_SLUG', 'testimonials-widget' );
 define( 'GCT2T_REQ_VERSION', '2.18.0' );
 define( 'GCT2T_VERSION', '1.2.0' );
 
+if ( defined( 'TW_DIR_LIB' ) ) {
+	define( 'GCT2T_DIR_LIB_ALT', TW_DIR_LIB );
+} else {
+	define( 'GCT2T_DIR_LIB_ALT', WP_PLUGIN_DIR . '/testimonials-widget/includes/libraries/' );
+}
+
 require_once GCT2T_DIR_INC . 'requirements.php';
 
 if ( ! gct2t_requirements_check() ) {

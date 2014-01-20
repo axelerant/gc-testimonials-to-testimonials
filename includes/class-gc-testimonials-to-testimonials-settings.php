@@ -22,13 +22,7 @@
  * Based upon http://alisothegeek.com/2011/01/wordpress-settings-api-tutorial-1/
  */
 
-if ( defined( 'TW_DIR_LIB' ) ) {
-	$plugin_base = TW_DIR_LIB;
-} else {
-	$plugin_base = WP_PLUGIN_DIR . '/testimonials-widget/includes/libraries/';
-}
-
-require_once $plugin_base . 'aihrus-framework/class-aihrus-settings.php';
+require_once GCT2T_DIR_LIB_ALT . 'aihrus-framework/class-aihrus-settings.php';
 
 if ( class_exists( 'Gc_Testimonials_to_Testimonials_Settings' ) )
 	return;
@@ -43,8 +37,8 @@ class Gc_Testimonials_to_Testimonials_Settings extends Aihrus_Settings {
 	public static $defaults = array();
 	public static $plugin_assets;
 	public static $plugin_url = 'http://wordpress.org/plugins/gc-testimonials-to-testimonials/';
-	public static $sections = array();
-	public static $settings = array();
+	public static $sections   = array();
+	public static $settings   = array();
 	public static $version;
 
 
@@ -210,7 +204,7 @@ class Gc_Testimonials_to_Testimonials_Settings extends Aihrus_Settings {
 
 		$screen->set_help_sidebar(
 			'<p><strong>' . esc_html__( 'For more information:', 'gc-testimonials-to-testimonials' ) . '</strong></p><p>' .
-			esc_html__( 'These GC Testimonials to Testimonials Settings establish the default option values for shortcodes, theme functions, and widget instances.', 'gc-testimonials-to-testimonials' ) .
+			esc_html__( 'These GC Testimonials to Testimonials Settings establish the default option values for migration.', 'gc-testimonials-to-testimonials' ) .
 			'</p><p>' .
 			sprintf(
 				__( 'View the <a href="%s">GC Testimonials to Testimonials documentation</a>.', 'gc-testimonials-to-testimonials' ),

@@ -3,6 +3,7 @@
 ## master
 
 ## 1.2.0
+* Allow activation with Testimonials Premium
 * Move ci to tests
 * Move CSS to assets
 * Move files to assets
