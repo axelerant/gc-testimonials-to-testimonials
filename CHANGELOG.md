@@ -4,6 +4,7 @@
 
 ## 1.2.1RC1
 * Change `self::notice_updated` to `aihr_notice_updated`
+* Require Testimonials by Aihrus 2.18.1
 * Use Codeship.io than Travis CI
 
 ## 1.2.0
