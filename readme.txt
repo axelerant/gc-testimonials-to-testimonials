@@ -113,6 +113,10 @@ See [CHANGELOG](https://github.com/michael-cannon/gc-testimonials-to-testimonial
 
 == Upgrade Notice ==
 
+= 1.2.1 =
+
+* Require Testimonials by Aihrus 2.18.1
+
 = 1.0.0 =
 
 * Initial release
