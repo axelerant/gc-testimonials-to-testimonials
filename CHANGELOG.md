@@ -2,6 +2,9 @@
 
 ## master
 
+## 1.2.1RC1
+* Change `self::notice_updated` to `aihr_notice_updated`
+
 ## 1.2.0
 * Allow activation with Testimonials Premium
 * Move ci to tests

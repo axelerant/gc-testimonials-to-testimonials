@@ -529,7 +529,7 @@ class Gc_Testimonials_to_Testimonials extends Aihrus_Common {
 	public static function notice_1_0_0() {
 		$text = sprintf( __( 'If your Migrate GC Testimonials to Testimonials display has gone to funky town, please <a href="%s">read the FAQ</a> about possible CSS fixes.', 'gc-testimonials-to-testimonials' ), 'https://aihrus.zendesk.com/entries/23722573-Major-Changes-Since-2-10-0' );
 
-		self::notice_updated( $text );
+		aihr_notice_updated( $text );
 	}
 
 
