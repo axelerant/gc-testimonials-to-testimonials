@@ -1,6 +1,6 @@
 # GC Testimonials to Testimonials plugin for WordPress
 
-[![Build Status](https://travis-ci.org/michael-cannon/gc-testimonials-to-testimonials.png?branch=master)](https://travis-ci.org/michael-cannon/gc-testimonials-to-testimonials)
+![Codeship status](https://www.codeship.io/projects/7078d850-72b7-0131-ab14-4e46b2fa20d2/status)
 [![ProjectStatus](http://stillmaintained.com/michael-cannon/gc-testimonials-to-testimonials.png)](http://stillmaintained.com/michael-cannon/gc-testimonials-to-testimonials)
 
 ## Welcome to the GC Testimonials to Testimonials Github repository

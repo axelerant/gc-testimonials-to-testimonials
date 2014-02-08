@@ -4,6 +4,7 @@
 
 ## 1.2.1RC1
 * Change `self::notice_updated` to `aihr_notice_updated`
+* Use Codeship.io than Travis CI
 
 ## 1.2.0
 * Allow activation with Testimonials Premium
