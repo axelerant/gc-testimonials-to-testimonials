@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: GC Testimonials to Testimonials by Aihrus
+ * Plugin Name: Testimonials – GC Testimonials Migrator
  * Plugin URI: http://wordpress.org/plugins/gc-testimonials-to-testimonials/
  * Description: Migrate GC Testimonials entries to Testimonials by Aihrus custom post types.
  * Version: 1.2.1RC1
