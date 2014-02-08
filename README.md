@@ -1,6 +1,6 @@
 # GC Testimonials to Testimonials plugin for WordPress
 
-![Codeship status](https://www.codeship.io/projects/7078d850-72b7-0131-ab14-4e46b2fa20d2/status)
+[![Codeship status](https://www.codeship.io/projects/7078d850-72b7-0131-ab14-4e46b2fa20d2/status)](https://www.codeship.io/projects/13667)
 [![ProjectStatus](http://stillmaintained.com/michael-cannon/gc-testimonials-to-testimonials.png)](http://stillmaintained.com/michael-cannon/gc-testimonials-to-testimonials)
 
 ## Welcome to the GC Testimonials to Testimonials Github repository
