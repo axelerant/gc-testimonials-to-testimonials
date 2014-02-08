@@ -460,7 +460,7 @@ class Gc_Testimonials_to_Testimonials extends Aihrus_Common {
 					'key' => $migrated_key,
 					'value' => $post_id,
 					'type' => 'NUMERIC',
-				)
+				),
 			)
 		);
 

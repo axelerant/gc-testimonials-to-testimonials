@@ -68,7 +68,7 @@ class Gc_Testimonials_to_Testimonials_Settings extends Aihrus_Settings {
 
 
 	public static function admin_menu() {
-		self::$admin_page =  add_submenu_page( 'edit.php?post_type=' . Testimonials_Widget::PT, esc_html__( 'GC Testimonials to Testimonials Settings', 'gc-testimonials-to-testimonials' ), esc_html__( 'GCT Settings', 'gc-testimonials-to-testimonials' ), 'manage_options', self::ID, array( __CLASS__, 'display_page' ) );
+		self::$admin_page = add_submenu_page( 'edit.php?post_type=' . Testimonials_Widget::PT, esc_html__( 'GC Testimonials to Testimonials Settings', 'gc-testimonials-to-testimonials' ), esc_html__( 'GCT Settings', 'gc-testimonials-to-testimonials' ), 'manage_options', self::ID, array( __CLASS__, 'display_page' ) );
 
 		add_action( 'admin_print_scripts-' . self::$admin_page, array( __CLASS__, 'scripts' ) );
 		add_action( 'admin_print_styles-' . self::$admin_page, array( __CLASS__, 'styles' ) );
