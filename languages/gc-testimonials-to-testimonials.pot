@@ -1,10 +1,10 @@
-# Copyright (C) 2014 GC Testimonials to Testimonials by Aihrus
-# This file is distributed under the same license as the GC Testimonials to Testimonials by Aihrus package.
+# Copyright (C) 2014 Testimonials – GC Testimonials Migrator
+# This file is distributed under the same license as the Testimonials – GC Testimonials Migrator package.
 msgid ""
 msgstr ""
-"Project-Id-Version: GC Testimonials to Testimonials by Aihrus 1.2.0\n"
+"Project-Id-Version: Testimonials – GC Testimonials Migrator 1.2.1\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/gc-testimonials-to-testimonials\n"
-"POT-Creation-Date: 2014-01-20 06:41:48+00:00\n"
+"POT-Creation-Date: 2014-02-17 05:40:20+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -23,7 +23,7 @@ msgstr ""
 
 #: includes/class-gc-testimonials-to-testimonials-settings.php:79
 #: includes/class-gc-testimonials-to-testimonials.php:68
-#: includes/class-gc-testimonials-to-testimonials.php:177
+#: includes/class-gc-testimonials-to-testimonials.php:179
 msgid "GC Testimonials to Testimonials Migrator"
 msgstr ""
 
@@ -83,100 +83,100 @@ msgstr ""
 msgid "GCT Migrator"
 msgstr ""
 
-#: includes/class-gc-testimonials-to-testimonials.php:96
+#: includes/class-gc-testimonials-to-testimonials.php:97
 msgid "Migrate"
 msgstr ""
 
-#: includes/class-gc-testimonials-to-testimonials.php:169
+#: includes/class-gc-testimonials-to-testimonials.php:171
 msgid "Your user account doesn't have permission to access this."
 msgstr ""
 
-#: includes/class-gc-testimonials-to-testimonials.php:195
+#: includes/class-gc-testimonials-to-testimonials.php:197
 msgid "All done. No posts needing processing found."
 msgstr ""
 
-#: includes/class-gc-testimonials-to-testimonials.php:259
+#: includes/class-gc-testimonials-to-testimonials.php:267
 msgid "Use this tool for migrating GC Testimonials entries to Testimonials custom post types."
 msgstr ""
 
-#: includes/class-gc-testimonials-to-testimonials.php:261
+#: includes/class-gc-testimonials-to-testimonials.php:269
 msgid "This migration is not reversible. Backup your database beforehand or be prepared to delete each migrated testimonial manually."
 msgstr ""
 
-#: includes/class-gc-testimonials-to-testimonials.php:263
+#: includes/class-gc-testimonials-to-testimonials.php:271
 msgid "Please review your %s before proceeding."
 msgstr ""
 
-#: includes/class-gc-testimonials-to-testimonials.php:265
+#: includes/class-gc-testimonials-to-testimonials.php:273
 msgid "To begin, just press the button below."
 msgstr ""
 
-#: includes/class-gc-testimonials-to-testimonials.php:267
+#: includes/class-gc-testimonials-to-testimonials.php:275
 msgid "Migrate GC Testimonials to Testimonials"
 msgstr ""
 
-#: includes/class-gc-testimonials-to-testimonials.php:269
-#: includes/class-gc-testimonials-to-testimonials.php:293
+#: includes/class-gc-testimonials-to-testimonials.php:277
+#: includes/class-gc-testimonials-to-testimonials.php:303
 msgid "You must enable Javascript in order to proceed!"
 msgstr ""
 
-#: includes/class-gc-testimonials-to-testimonials.php:282
+#: includes/class-gc-testimonials-to-testimonials.php:292
 msgid "Please be patient while this script run. This can take a while, up to a minute per post. Do not navigate away from this page until this script is done or the import will not be completed. You will be notified via this page when the import is completed."
 msgstr ""
 
-#: includes/class-gc-testimonials-to-testimonials.php:284
+#: includes/class-gc-testimonials-to-testimonials.php:294
 msgid "Estimated time required to import is %1$s minutes."
 msgstr ""
 
-#: includes/class-gc-testimonials-to-testimonials.php:286
+#: includes/class-gc-testimonials-to-testimonials.php:296
 msgid "To go back to the previous page, <a href=\"%s\">click here</a>."
 msgstr ""
 
-#: includes/class-gc-testimonials-to-testimonials.php:288
+#: includes/class-gc-testimonials-to-testimonials.php:298
 msgid "All done! %1$s posts were successfully processed in %2$s seconds and there were %3$s failures. To try importing the failed posts again, <a href=\"%4$s\">click here</a>. %5$s"
 msgstr ""
 
-#: includes/class-gc-testimonials-to-testimonials.php:290
+#: includes/class-gc-testimonials-to-testimonials.php:300
 msgid "All done! %1$s posts were successfully processed in %2$s seconds and there were no failures. %3$s"
 msgstr ""
 
-#: includes/class-gc-testimonials-to-testimonials.php:299
+#: includes/class-gc-testimonials-to-testimonials.php:309
 msgid "Abort Migrating Posts"
 msgstr ""
 
-#: includes/class-gc-testimonials-to-testimonials.php:301
+#: includes/class-gc-testimonials-to-testimonials.php:311
 msgid "Status"
 msgstr ""
 
-#: includes/class-gc-testimonials-to-testimonials.php:304
+#: includes/class-gc-testimonials-to-testimonials.php:314
 msgid "Total Testimonials: %s"
 msgstr ""
 
-#: includes/class-gc-testimonials-to-testimonials.php:305
+#: includes/class-gc-testimonials-to-testimonials.php:315
 msgid "Testimonials Migrated: %s"
 msgstr ""
 
-#: includes/class-gc-testimonials-to-testimonials.php:306
+#: includes/class-gc-testimonials-to-testimonials.php:316
 msgid "Migration Failures: %s"
 msgstr ""
 
-#: includes/class-gc-testimonials-to-testimonials.php:337
+#: includes/class-gc-testimonials-to-testimonials.php:347
 msgid "Stopping, please wait a moment."
 msgstr ""
 
-#: includes/class-gc-testimonials-to-testimonials.php:437
+#: includes/class-gc-testimonials-to-testimonials.php:448
 msgid "Failed Migration: %s is incorrect post type."
 msgstr ""
 
-#: includes/class-gc-testimonials-to-testimonials.php:441
+#: includes/class-gc-testimonials-to-testimonials.php:452
 msgid "&quot;<a href=\"%1$s\" target=\"_blank\">%2$s</a>&quot; GC Testimonial ID %3$s was successfully migrated to Testimonials %6$s &quot;<a href=\"%4$s\" target=\"_blank\">%5$s</a>&quot;."
 msgstr ""
 
-#: includes/class-gc-testimonials-to-testimonials.php:443
+#: includes/class-gc-testimonials-to-testimonials.php:454
 msgid "&quot;<a href=\"%1$s\" target=\"_blank\">%2$s</a>&quot; Unable to be migrated."
 msgstr ""
 
-#: includes/class-gc-testimonials-to-testimonials.php:530
+#: includes/class-gc-testimonials-to-testimonials.php:538
 msgid "If your Migrate GC Testimonials to Testimonials display has gone to funky town, please <a href=\"%s\">read the FAQ</a> about possible CSS fixes."
 msgstr ""
 
@@ -196,7 +196,7 @@ msgstr ""
 msgid "Plugin \"%3$s\" has been deactivated. Please %1$s \"%4$s\" version %2$s or newer before activating \"%3$s\"."
 msgstr ""
 #. Plugin Name of the plugin/theme
-msgid "GC Testimonials to Testimonials by Aihrus"
+msgid "Testimonials – GC Testimonials Migrator"
 msgstr ""
 
 #. Plugin URI of the plugin/theme
