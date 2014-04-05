@@ -2,6 +2,11 @@
 
 ## master
 
+## 1.2.2RC1
+* Require Testimonials by Aihrus 2.19.0
+* Update Aihrus integration
+* Update copyright year
+
 ## 1.2.1
 * Change `self::notice_updated` to `aihr_notice_updated`
 * Require Testimonials by Aihrus 2.18.1

@@ -1,6 +1,6 @@
 <?php
 /*
-	Copyright 2013 Michael Cannon (email: mc@aihr.us)
+	Copyright 2014 Michael Cannon (email: mc@aihr.us)
 
 	This program is free software; you can redistribute it and/or modify
 	it under the terms of the GNU General Public License, version 2, as
@@ -45,18 +45,27 @@ if ( ! function_exists( 'aihr_notice_version' ) ) {
 }
 
 
-function gct2t_requirements_check() {
-	$valid_requirements = true;
+function gct2t_requirements_check( $force_check = false ) {
+	$check_okay = get_transient( 'gct2t_requirements_check' );
+	if ( empty( $force_check ) && $check_okay !== false ) {
+		return $check_okay;
+	}
+
+	$deactivate_reason = false;
 	if ( ! is_plugin_active( GCT2T_REQ_BASE ) && ! is_plugin_active( GCT2T_REQ_BASE_PREM ) ) {
-		$valid_requirements = false;
+		$deactivate_reason = esc_html__( 'Required plugins not detected' );
 		add_action( 'admin_notices', 'gct2t_notice_version' );
 	}
 
-	if ( ! $valid_requirements ) {
-		deactivate_plugins( GCT2T_BASE );
+	if ( ! empty( $deactivate_reason ) ) {
+		aihr_deactivate_plugin( TW_BASE, TW_NAME, $deactivate_reason );
 	}
 
-	return $valid_requirements;
+	$check_okay = empty( $deactivate_reason );
+	delete_transient( 'gct2t_requirements_check' );
+	set_transient( 'gct2t_requirements_check', $check_okay, WEEK_IN_SECONDS );
+
+	return $check_okay;
 }
 
 

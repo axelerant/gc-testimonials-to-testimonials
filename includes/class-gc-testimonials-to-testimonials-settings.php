@@ -1,6 +1,6 @@
 <?php
 /*
-	Copyright 2013 Michael Cannon (email: mc@aihr.us)
+	Copyright 2014 Michael Cannon (email: mc@aihr.us)
 
 	This program is free software; you can redistribute it and/or modify
 	it under the terms of the GNU General Public License, version 2, as
@@ -22,7 +22,7 @@
  * Based upon http://alisothegeek.com/2011/01/wordpress-settings-api-tutorial-1/
  */
 
-require_once GCT2T_DIR_LIB_ALT . 'aihrus-framework/class-aihrus-settings.php';
+require_once GCT2T_DIR_LIB_ALT . 'aihrus-framework/includes/class-aihrus-settings.php';
 
 if ( class_exists( 'Gc_Testimonials_to_Testimonials_Settings' ) )
 	return;

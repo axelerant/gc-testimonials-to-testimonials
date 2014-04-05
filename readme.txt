@@ -5,7 +5,7 @@ Donate link: http://aihr.us/about-aihrus/donate/
 Tags: gc testimonials, migration, convert, testimonials, testimonials widget
 Requires at least: 3.6
 Tested up to: 3.9.0
-Stable tag: 1.2.1
+Stable tag: 1.2.2RC1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -112,6 +112,10 @@ See [CHANGELOG](https://github.com/michael-cannon/gc-testimonials-to-testimonial
 
 
 == Upgrade Notice ==
+
+= 1.2.2 =
+
+* Require Testimonials by Aihrus 2.19.0
 
 = 1.2.1 =
 

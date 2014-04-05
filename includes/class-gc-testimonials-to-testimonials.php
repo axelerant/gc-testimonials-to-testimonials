@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2013 Michael Cannon (email: mc@aihr.us)
+ * Copyright 2014 Michael Cannon (email: mc@aihr.us)
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License, version 2, as
  * published by the Free Software Foundation.
@@ -13,7 +13,7 @@
  * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
  */
 
-require_once GCT2T_DIR_LIB_ALT . 'aihrus-framework/class-aihrus-common.php';
+require_once GCT2T_DIR_LIB_ALT . 'aihrus-framework/includes/class-aihrus-common.php';
 require_once GCT2T_DIR_INC . 'class-gc-testimonials-to-testimonials-settings.php';
 
 if ( class_exists( 'Gc_Testimonials_to_Testimonials' ) )
@@ -559,8 +559,10 @@ class Gc_Testimonials_to_Testimonials extends Aihrus_Common {
 			if ( $prior_version < '1.0.0' )
 				add_action( 'admin_notices', array( __CLASS__, 'notice_1_0_0' ) );
 
-			if ( $prior_version < self::VERSION )
+			if ( $prior_version < self::VERSION ) {
+				gct2t_requirements_check( true );
 				do_action( 'gct2t_update' );
+			}
 
 			gct2t_set_option( 'admin_notices' );
 		}
@@ -603,7 +605,8 @@ class Gc_Testimonials_to_Testimonials extends Aihrus_Common {
 	public static function version_check() {
 		$valid_version = true;
 		if ( ! $valid_version ) {
-			deactivate_plugins( self::BASE );
+			$deactivate_reason = esc_html__( 'Failed version check' );
+			aihr_deactivate_plugin( self::BASE, GCT2T_NAME, $deactivate_reason );
 			self::check_notices();
 		}
 
