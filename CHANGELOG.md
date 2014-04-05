@@ -3,6 +3,7 @@
 ## master
 
 ## 1.2.2RC1
+* Disallow activation when required plugins aren't activated
 * Require Testimonials by Aihrus 2.19.0
 * Update Aihrus integration
 * Update copyright year

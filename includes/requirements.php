@@ -46,15 +46,12 @@ if ( ! function_exists( 'aihr_notice_version' ) ) {
 
 
 function gct2t_requirements_check( $force_check = false ) {
-	$check_okay = get_transient( 'gct2t_requirements_check' );
-	if ( empty( $force_check ) && $check_okay !== false ) {
-		return $check_okay;
-	}
-
 	$deactivate_reason = false;
 	if ( ! is_plugin_active( GCT2T_REQ_BASE ) && ! is_plugin_active( GCT2T_REQ_BASE_PREM ) ) {
 		$deactivate_reason = esc_html__( 'Required plugins not detected' );
 		add_action( 'admin_notices', 'gct2t_notice_version' );
+
+		return false;
 	}
 
 	if ( ! empty( $deactivate_reason ) ) {
@@ -62,8 +59,6 @@ function gct2t_requirements_check( $force_check = false ) {
 	}
 
 	$check_okay = empty( $deactivate_reason );
-	delete_transient( 'gct2t_requirements_check' );
-	set_transient( 'gct2t_requirements_check', $check_okay, WEEK_IN_SECONDS );
 
 	return $check_okay;
 }
