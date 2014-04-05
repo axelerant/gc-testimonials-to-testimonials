@@ -48,14 +48,13 @@ if ( ! function_exists( 'aihr_notice_version' ) ) {
 function gct2t_requirements_check( $force_check = false ) {
 	$deactivate_reason = false;
 	if ( ! is_plugin_active( GCT2T_REQ_BASE ) && ! is_plugin_active( GCT2T_REQ_BASE_PREM ) ) {
-		$deactivate_reason = esc_html__( 'Required plugins not detected' );
 		add_action( 'admin_notices', 'gct2t_notice_version' );
 
 		return false;
 	}
 
 	if ( ! empty( $deactivate_reason ) ) {
-		aihr_deactivate_plugin( TW_BASE, TW_NAME, $deactivate_reason );
+		aihr_deactivate_plugin( GCT2T_BASE, GCT2T_NAME, $deactivate_reason );
 	}
 
 	$check_okay = empty( $deactivate_reason );
@@ -66,6 +65,8 @@ function gct2t_requirements_check( $force_check = false ) {
 
 function gct2t_notice_version() {
 	aihr_notice_version( GCT2T_REQ_BASE, GCT2T_REQ_NAME, GCT2T_REQ_SLUG, GCT2T_REQ_VERSION, GCT2T_NAME );
+	
+	deactivate_plugins( GCT2T_BASE );
 }
 
 ?>
