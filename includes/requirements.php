@@ -45,6 +45,11 @@ if ( ! function_exists( 'aihr_notice_version' ) ) {
 }
 
 
+/**
+ *
+ *
+ * @SuppressWarnings(PHPMD.UnusedFormalParameter)
+ */
 function gct2t_requirements_check( $force_check = false ) {
 	$deactivate_reason = false;
 	if ( ! is_plugin_active( GCT2T_REQ_BASE ) && ! is_plugin_active( GCT2T_REQ_BASE_PREM ) ) {
