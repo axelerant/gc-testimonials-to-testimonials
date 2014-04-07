@@ -3,7 +3,7 @@
  * Plugin Name: Testimonials – GC Testimonials Migrator
  * Plugin URI: http://wordpress.org/plugins/gc-testimonials-to-testimonials/
  * Description: Migrate GC Testimonials entries to Testimonials by Aihrus custom post types.
- * Version: 1.2.2RC1
+ * Version: 1.2.2
  * Author: Michael Cannon
  * Author URI: http://aihr.us/resume/
  * License: GPLv2 or later
@@ -36,7 +36,7 @@ define( 'GCT2T_REQ_BASE_PREM', 'testimonials-widget-premium/testimonials-widget-
 define( 'GCT2T_REQ_NAME', 'Testimonials by Aihrus' );
 define( 'GCT2T_REQ_SLUG', 'testimonials-widget' );
 define( 'GCT2T_REQ_VERSION', '2.19.0' );
-define( 'GCT2T_VERSION', '1.2.2RC1' );
+define( 'GCT2T_VERSION', '1.2.2' );
 
 if ( defined( 'TW_DIR_LIB' ) ) {
 	define( 'GCT2T_DIR_LIB_ALT', TW_DIR_LIB );

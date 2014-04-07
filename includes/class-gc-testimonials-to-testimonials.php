@@ -560,7 +560,6 @@ class Gc_Testimonials_to_Testimonials extends Aihrus_Common {
 				add_action( 'admin_notices', array( __CLASS__, 'notice_1_0_0' ) );
 
 			if ( $prior_version < self::VERSION ) {
-				gct2t_requirements_check( true );
 				do_action( 'gct2t_update' );
 			}
 
@@ -616,32 +615,6 @@ class Gc_Testimonials_to_Testimonials extends Aihrus_Common {
 
 	public static function call_scripts_styles( $atts ) {
 		self::scripts( $atts );
-	}
-
-
-	public static function get_scripts() {
-		if ( empty( self::$scripts ) )
-			return;
-
-		foreach ( self::$scripts as $script )
-			echo $script;
-	}
-
-
-	public static function get_styles() {
-		if ( empty( self::$styles ) )
-			return;
-
-		if ( empty( self::$styles_called ) ) {
-			echo '<style>';
-
-			foreach ( self::$styles as $style )
-				echo $style;
-
-			echo '</style>';
-
-			self::$styles_called = true;
-		}
 	}
 
 
