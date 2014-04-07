@@ -2,9 +2,9 @@
 # This file is distributed under the same license as the Testimonials – GC Testimonials Migrator package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Testimonials – GC Testimonials Migrator 1.2.1\n"
+"Project-Id-Version: Testimonials – GC Testimonials Migrator 1.2.2\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/gc-testimonials-to-testimonials\n"
-"POT-Creation-Date: 2014-02-17 05:40:20+00:00\n"
+"POT-Creation-Date: 2014-04-07 12:35:20+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -178,6 +178,10 @@ msgstr ""
 
 #: includes/class-gc-testimonials-to-testimonials.php:538
 msgid "If your Migrate GC Testimonials to Testimonials display has gone to funky town, please <a href=\"%s\">read the FAQ</a> about possible CSS fixes."
+msgstr ""
+
+#: includes/class-gc-testimonials-to-testimonials.php:607
+msgid "Failed version check"
 msgstr ""
 
 #: includes/requirements.php:25
