@@ -2,10 +2,10 @@
 /**
  * Plugin Name: Testimonials – GC Testimonials Migrator
  * Plugin URI: http://wordpress.org/plugins/gc-testimonials-to-testimonials/
- * Description: Migrate GC Testimonials entries to Testimonials by Aihrus custom post types.
- * Version: 1.2.2
- * Author: Michael Cannon
- * Author URI: http://aihr.us/resume/
+ * Description: Migrate GC Testimonials entries to Testimonials by Axelerant custom post types.
+ * Version: 1.3.0RC1
+ * Author: Axelerant
+ * Author URI: http://axelerant.com/
  * License: GPLv2 or later
  * Text Domain: gc-testimonials-to-testimonials
  * Domain Path: /languages
@@ -13,7 +13,7 @@
 
 
 /**
- * Copyright 2014 Michael Cannon (email: mc@aihr.us)
+ * Copyright 2015 Axelerant (email: info@axelerant.com)
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License, version 2, as
  * published by the Free Software Foundation.

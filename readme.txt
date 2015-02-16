@@ -1,26 +1,25 @@
-=== GC Testimonials to Testimonials by Aihrus ===
+=== GC Testimonials to Testimonials by Axelerant ===
 
 Contributors: comprock
-Donate link: http://aihr.us/about-aihrus/donate/
 Tags: gc testimonials, migration, convert, testimonials, testimonials widget
 Requires at least: 3.6
 Tested up to: 3.9.0
-Stable tag: 1.2.2
+Stable tag: 1.3.0RC1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Migrate GC Testimonials entries to Testimonials by Aihrus custom post types.
+Migrate GC Testimonials entries to Testimonials by Axelerant custom post types.
 
 
 == Description ==
 
-Migrate GC Testimonials entries to Testimonials [by Aihrus](http://aihr.us/about-aihrus/) custom post types for use by the best WordPress testimonials plugin there is, [Testimonials by Aihrus](http://wordpress.org/extend/plugins/testimonials-widget/).
+Migrate GC Testimonials entries to Testimonials [by Axelerant](http://axelerant.com/about-axelerant/) custom post types for use by the best WordPress testimonials plugin there is, [Testimonials by Axelerant](http://wordpress.org/extend/plugins/testimonials-widget/).
 
 = Primary Features =
 
 * API
 * Ajax based processing screen
-* Migrates GC Testimonial fields, categories, and images to Testimonials by Aihrus format
+* Migrates GC Testimonial fields, categories, and images to Testimonials by Axelerant format
 * Settings export/import
 * Settings screen
 
@@ -44,14 +43,14 @@ Migrate GC Testimonials entries to Testimonials [by Aihrus](http://aihr.us/about
 
 = Requirements =
 
-* PHP 5.3+ [Read notice](https://aihrus.zendesk.com/entries/30678006)
-* Plugin "[Testimonials by Aihrus](http://wordpress.org/plugins/testimonials-widget/)" is required to be installed and activated prior to activating "GC Testimonials to Testimonials".
+* PHP 5.3+ [Read notice](https://nodedesk.zendesk.com/hc/en-us/articles/202331041)
+* Plugin "[Testimonials by Axelerant](http://wordpress.org/plugins/testimonials-widget/)" is required to be installed and activated prior to activating "GC Testimonials to Testimonials".
 
 = Install Methods =
 
 * Through WordPress Admin > Plugins > Add New, Search for "GC Testimonials to Testimonials"
-	* Find "GC Testimonials to Testimonials by Aihrus"
-	* Click "Install Now" of "GC Testimonials to Testimonials by Aihrus"
+	* Find "GC Testimonials to Testimonials"
+	* Click "Install Now" of "GC Testimonials to Testimonials"
 * Download [`gc-testimonials-to-testimonials.zip`](http://downloads.wordpress.org/plugin/gc-testimonials-to-testimonials.zip) locally
 	* Through WordPress Admin > Plugins > Add New
 	* Click Upload
@@ -86,8 +85,8 @@ Migrate GC Testimonials entries to Testimonials [by Aihrus](http://aihr.us/about
 
 = Most Common Issues =
 
-* Got `Parse error: syntax error, unexpected T_STATIC, expecting ')'`? Read [Most Aihrus Plugins Require PHP 5.3+](https://aihrus.zendesk.com/entries/30678006) for the fixes.
-* [Debug common theme and plugin conflicts](https://aihrus.zendesk.com/entries/25119302)
+* Got `Parse error: syntax error, unexpected T_STATIC, expecting ')'`? Read [Most Axelerant Plugins Require PHP 5.3+](https://nodedesk.zendesk.com/hc/en-us/articles/202331041) for the fixes.
+* [Debug common theme and plugin conflicts](https://nodedesk.zendesk.com/hc/en-us/articles/202330781)
 
 = Still Stuck or Want Something Done? Get Support! =
 
@@ -95,7 +94,7 @@ Migrate GC Testimonials entries to Testimonials [by Aihrus](http://aihr.us/about
 1. [Open GC Testimonials to Testimonials Issues](https://github.com/michael-cannon/gc-testimonials-to-testimonials/issues) - review and submit bug reports and enhancement requests
 1. [GC Testimonials to Testimonials Support on WordPress](http://wordpress.org/support/plugin/gc-testimonials-to-testimonials) - ask questions and review responses
 1. [Contribute Code to GC Testimonials to Testimonials](https://github.com/michael-cannon/gc-testimonials-to-testimonials/blob/master/CONTRIBUTING.md)
-1. [Beta Testers Needed](http://aihr.us/become-beta-tester/) - get the latest GC Testimonials to Testimonials version
+1. [Beta Testers Needed](http://axelerant.com/become-beta-tester/) - get the latest GC Testimonials to Testimonials version
 
 
 == Screenshots ==
@@ -115,11 +114,11 @@ See [CHANGELOG](https://github.com/michael-cannon/gc-testimonials-to-testimonial
 
 = 1.2.2 =
 
-* Require Testimonials by Aihrus 2.19.0
+* Require Testimonials by Axelerant 2.19.0
 
 = 1.2.1 =
 
-* Require Testimonials by Aihrus 2.18.1
+* Require Testimonials by Axelerant 2.18.1
 
 = 1.0.0 =
 
@@ -137,6 +136,6 @@ TBD
 
 == Localization ==
 
-You can translate this plugin into your own language if it's not done so already. The localization file `gc-testimonials-to-testimonials.pot` can be found in the `languages` folder of this plugin. After translation, please [send the localized file](http://aihr.us/contact-aihrus/) for plugin inclusion.
+You can translate this plugin into your own language if it's not done so already. The localization file `gc-testimonials-to-testimonials.pot` can be found in the `languages` folder of this plugin. After translation, please [send the localized file](http://axelerant.com/contact-axelerant/) for plugin inclusion.
 
-**[How do I localize?](https://aihrus.zendesk.com/entries/23691557)**
+**[How do I localize?](https://nodedesk.zendesk.com/hc/en-us/articles/202294892)**

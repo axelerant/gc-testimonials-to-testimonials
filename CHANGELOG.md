@@ -1,6 +1,10 @@
-# CHANGELOG GC Testimonials to Testimonials by Aihrus
+# CHANGELOG GC Testimonials to Testimonials by Axelerant
 
 ## master
+
+## 1.3.0RC1
+* Change brand name from Aihrus to Axelerant
+* Update copyright text
 
 ## 1.2.2
 * Disallow activation when required plugins aren't activated
