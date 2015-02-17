@@ -1,4 +1,4 @@
-# CHANGELOG GC Testimonials to Testimonials by Axelerant
+# CHANGELOG GC Testimonials to Testimonials
 
 ## master
 

@@ -1,4 +1,4 @@
-=== GC Testimonials to Testimonials by Axelerant ===
+=== GC Testimonials to Testimonials ===
 
 Contributors: comprock
 Tags: gc testimonials, migration, convert, testimonials, testimonials widget
@@ -8,18 +8,18 @@ Stable tag: 1.3.0RC1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Migrate GC Testimonials entries to Testimonials by Axelerant custom post types.
+Migrate GC Testimonials entries to Testimonials custom post types.
 
 
 == Description ==
 
-Migrate GC Testimonials entries to Testimonials [by Axelerant](http://axelerant.com/about-axelerant/) custom post types for use by the best WordPress testimonials plugin there is, [Testimonials by Axelerant](http://wordpress.org/extend/plugins/testimonials-widget/).
+Migrate GC Testimonials entries to Testimonials custom post types for use by the best WordPress testimonials plugin there is, [Testimonials](http://wordpress.org/extend/plugins/testimonials-widget/).
 
 = Primary Features =
 
 * API
 * Ajax based processing screen
-* Migrates GC Testimonial fields, categories, and images to Testimonials by Axelerant format
+* Migrates GC Testimonial fields, categories, and images to Testimonials format
 * Settings export/import
 * Settings screen
 
@@ -44,7 +44,7 @@ Migrate GC Testimonials entries to Testimonials [by Axelerant](http://axelerant.
 = Requirements =
 
 * PHP 5.3+ [Read notice](https://nodedesk.zendesk.com/hc/en-us/articles/202331041)
-* Plugin "[Testimonials by Axelerant](http://wordpress.org/plugins/testimonials-widget/)" is required to be installed and activated prior to activating "GC Testimonials to Testimonials".
+* Plugin "[Testimonials](http://wordpress.org/plugins/testimonials-widget/)" is required to be installed and activated prior to activating "GC Testimonials to Testimonials".
 
 = Install Methods =
 
@@ -90,7 +90,7 @@ Migrate GC Testimonials entries to Testimonials [by Axelerant](http://axelerant.
 
 = Still Stuck or Want Something Done? Get Support! =
 
-1. [Testimonials Knowledge Base](https://aihrus.zendesk.com/categories/20104507) - read and comment upon 125+ frequently asked questions
+1. [Testimonials Knowledge Base](https://nodedesk.zendesk.com/hc/en-us/sections/200861112-WordPress-FAQs) - read and comment upon 125+ frequently asked questions
 1. [Open GC Testimonials to Testimonials Issues](https://github.com/michael-cannon/gc-testimonials-to-testimonials/issues) - review and submit bug reports and enhancement requests
 1. [GC Testimonials to Testimonials Support on WordPress](http://wordpress.org/support/plugin/gc-testimonials-to-testimonials) - ask questions and review responses
 1. [Contribute Code to GC Testimonials to Testimonials](https://github.com/michael-cannon/gc-testimonials-to-testimonials/blob/master/CONTRIBUTING.md)
@@ -114,11 +114,11 @@ See [CHANGELOG](https://github.com/michael-cannon/gc-testimonials-to-testimonial
 
 = 1.2.2 =
 
-* Require Testimonials by Axelerant 2.19.0
+* Require Testimonials 2.19.0
 
 = 1.2.1 =
 
-* Require Testimonials by Axelerant 2.18.1
+* Require Testimonials 2.18.1
 
 = 1.0.0 =
 

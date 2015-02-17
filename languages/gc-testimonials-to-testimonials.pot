@@ -208,7 +208,7 @@ msgid "http://wordpress.org/plugins/gc-testimonials-to-testimonials/"
 msgstr ""
 
 #. Description of the plugin/theme
-msgid "Migrate GC Testimonials entries to Testimonials by Axelerant custom post types."
+msgid "Migrate GC Testimonials entries to Testimonials custom post types."
 msgstr ""
 
 #. Author of the plugin/theme
