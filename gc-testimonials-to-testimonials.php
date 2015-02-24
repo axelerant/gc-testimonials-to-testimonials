@@ -33,7 +33,7 @@ define( 'GCT2T_DIR_LIB', GCT2T_DIR_INC . 'libraries/' );
 define( 'GCT2T_NAME', 'GC Testimonials to Testimonials Widget' );
 define( 'GCT2T_REQ_BASE', 'testimonials-widget/testimonials-widget.php' );
 define( 'GCT2T_REQ_BASE_PREM', 'testimonials-widget-premium/testimonials-widget-premium.php' );
-define( 'GCT2T_REQ_NAME', 'Testimonials' );
+define( 'GCT2T_REQ_NAME', 'Testimonials Widget' );
 define( 'GCT2T_REQ_SLUG', 'testimonials-widget' );
 define( 'GCT2T_REQ_VERSION', '2.19.0' );
 define( 'GCT2T_VERSION', '1.2.2' );
