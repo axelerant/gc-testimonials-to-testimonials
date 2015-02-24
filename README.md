@@ -1,17 +1,17 @@
-# GC Testimonials to Testimonials plugin for WordPress
+# GC Testimonials to Testimonials Widget plugin for WordPress
 
 [![Codeship status](https://www.codeship.io/projects/7078d850-72b7-0131-ab14-4e46b2fa20d2/status)](https://www.codeship.io/projects/13667)
 [![ProjectStatus](http://stillmaintained.com/michael-cannon/gc-testimonials-to-testimonials.png)](http://stillmaintained.com/michael-cannon/gc-testimonials-to-testimonials)
 
-## Welcome to the GC Testimonials to Testimonials Github repository
+## Welcome to the GC Testimonials to Testimonials Widget Github repository
 
-GC Testimonials to Testimonials plugin allows you to migrate GC Testimonials entries to Testimonials custom post types.
+GC Testimonials to Testimonials Widget plugin allows you to migrate GC Testimonials entries to Testimonials Widget custom post types.
 
-While the documentation for the [GC Testimonials to Testimonials plugin](http://wordpress.org/plugins/gc-testimonials-to-testimonials/) can be found at WordPress.org Plugin Directory, here you can browse the source of the project, find and discuss open issues and, even [contribute yourself](https://github.com/michael-cannon/gc-testimonials-to-testimonials/blob/master/CONTRIBUTING.md).
+While the documentation for the [GC Testimonials to Testimonials Widget plugin](http://wordpress.org/plugins/gc-testimonials-to-testimonials/) can be found at WordPress.org Plugin Directory, here you can browse the source of the project, find and discuss open issues and, even [contribute yourself](https://github.com/michael-cannon/gc-testimonials-to-testimonials/blob/master/CONTRIBUTING.md).
 
 ## Installation
 
-Here's a [guide on how to install GC Testimonials to Testimonials in your WordPress site](http://wordpress.org/plugins/gc-testimonials-to-testimonials/installation/). If you want to run the Git version though, you have two options:
+Here's a [guide on how to install GC Testimonials to Testimonials Widget in your WordPress site](http://wordpress.org/plugins/gc-testimonials-to-testimonials/installation/). If you want to run the Git version though, you have two options:
 
 * You can clone the GitHub repository: https://github.com/michael-cannon/gc-testimonials-to-testimonials.git
 * Download it directly as a ZIP file: https://github.com/michael-cannon/gc-testimonials-to-testimonials/archive/master.zip
@@ -24,11 +24,11 @@ If you find an issue, [let us know here](https://github.com/michael-cannon/gc-te
 
 ## Support
 
-This is a developer's portal for GC Testimonials to Testimonials Widget and should not be used for support. Please visit the [GC Testimonials to Testimonials Knowledge Base](https://aihrus.zendesk.com/categories/20104507-Testimonials-Widget) for frequently asked questions, offering ideas, or getting support.
+This is a developer's portal for GC Testimonials to Testimonials Widget and should not be used for support. Please visit the [GC Testimonials to Testimonials Widget Knowledge Base](https://aihrus.zendesk.com/categories/20104507-Testimonials-Widget) for frequently asked questions, offering ideas, or getting support.
 
 ## Contributions
 
-Anyone is welcome to contribute to GC Testimonials to Testimonials. Please [read the guidelines](https://github.com/michael-cannon/gc-testimonials-to-testimonials/blob/master/CONTRIBUTING.md) for contributing to this repository.
+Anyone is welcome to contribute to GC Testimonials to Testimonials Widget. Please [read the guidelines](https://github.com/michael-cannon/gc-testimonials-to-testimonials/blob/master/CONTRIBUTING.md) for contributing to this repository.
 
 There are various ways you can contribute:
 
