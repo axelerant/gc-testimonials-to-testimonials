@@ -1,6 +1,6 @@
-=== GC Testimonials to Testimonials ===
+=== GC Testimonials to Testimonials Widget ===
 
-Contributors: comprock
+Contributors: comprock, saurabhd
 Tags: gc testimonials, migration, convert, testimonials, testimonials widget
 Requires at least: 3.6
 Tested up to: 3.9.0
@@ -13,7 +13,7 @@ Migrate GC Testimonials entries to Testimonials custom post types.
 
 == Description ==
 
-Migrate GC Testimonials entries to Testimonials custom post types for use by the best WordPress testimonials plugin there is, [Testimonials](http://wordpress.org/extend/plugins/testimonials-widget/).
+Migrate GC Testimonials entries to Testimonials Widget custom post types for use by the best WordPress testimonials Widget plugin there is, [Testimonials](http://wordpress.org/extend/plugins/testimonials-widget/).
 
 = Primary Features =
 

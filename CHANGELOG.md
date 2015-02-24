@@ -1,4 +1,4 @@
-# CHANGELOG GC Testimonials to Testimonials
+# CHANGELOG GC Testimonials to Testimonial Widget
 
 ## master
 

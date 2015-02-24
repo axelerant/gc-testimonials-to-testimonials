@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: Testimonials – GC Testimonials Migrator
+ * Plugin Name: Testimonials Widget – GC Testimonials Migrator
  * Plugin URI: http://wordpress.org/plugins/gc-testimonials-to-testimonials/
  * Description: Migrate GC Testimonials entries to Testimonials custom post types.
  * Version: 1.3.0RC1
@@ -30,7 +30,7 @@ define( 'GCT2T_BASE', plugin_basename( __FILE__ ) );
 define( 'GCT2T_DIR', plugin_dir_path( __FILE__ ) );
 define( 'GCT2T_DIR_INC', GCT2T_DIR . 'includes/' );
 define( 'GCT2T_DIR_LIB', GCT2T_DIR_INC . 'libraries/' );
-define( 'GCT2T_NAME', 'GC Testimonials to Testimonials' );
+define( 'GCT2T_NAME', 'GC Testimonials to Testimonials Widget' );
 define( 'GCT2T_REQ_BASE', 'testimonials-widget/testimonials-widget.php' );
 define( 'GCT2T_REQ_BASE_PREM', 'testimonials-widget-premium/testimonials-widget-premium.php' );
 define( 'GCT2T_REQ_NAME', 'Testimonials' );
