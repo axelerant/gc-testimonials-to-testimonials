@@ -5,11 +5,12 @@
 ## 1.3.0RC1
 * Change branding from Aihrus to Axelerant
 * Update copyright text
+* Update plugin name
 
 ## 1.2.2
 * Disallow activation when required plugins aren't activated
 * Require Aihrus 1.1.0
-* Require Testimonials by Aihrus 2.19.0
+* Require Testimonials Widget 2.19.0
 * Update Aihrus integration
 * Update copyright year
 

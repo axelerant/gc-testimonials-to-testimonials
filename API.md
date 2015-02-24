@@ -1,6 +1,6 @@
-# API GC Testimonials to Testimonials
+# API GC Testimonials to Testimonials Widget
 
-The [GC Testimonials to Testimonials plugin](http://wordpress.org/plugins/gc-testimonials-to-testimonials/) comes with its own set of actions and filters, as described below.
+The [GC Testimonials to Testimonials Widget plugin](http://wordpress.org/plugins/gc-testimonials-to-testimonials/) comes with its own set of actions and filters, as described below.
 
 ## Actions
 
@@ -56,4 +56,4 @@ The [GC Testimonials to Testimonials plugin](http://wordpress.org/plugins/gc-tes
 
 ## Need More?
 
-Further examples and more can be found by reading and searching the [GC Testimonials to Testimonials Knowledge Base](https://aihrus.zendesk.com/categories/20104507-Testimonials-Widget) and [source code](https://github.com/michael-cannon/gc-testimonials-to-testimonials).
+Further examples and more can be found by reading and searching the [GC Testimonials to Testimonials Widget Knowledge Base](https://aihrus.zendesk.com/categories/20104507-Testimonials-Widget) and [source code](https://github.com/michael-cannon/gc-testimonials-to-testimonials).

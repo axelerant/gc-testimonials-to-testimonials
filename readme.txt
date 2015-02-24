@@ -8,18 +8,18 @@ Stable tag: 1.3.0RC1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Migrate GC Testimonials entries to Testimonials custom post types.
+Migrate GC Testimonials entries to Testimonials Widget custom post types.
 
 
 == Description ==
 
-Migrate GC Testimonials entries to Testimonials Widget custom post types for use by the best WordPress testimonials Widget plugin there is, [Testimonials](http://wordpress.org/extend/plugins/testimonials-widget/).
+Migrate GC Testimonials entries to Testimonials Widget custom post types for use by the best WordPress testimonials Widget plugin there is, [Testimonials Widget](http://wordpress.org/extend/plugins/testimonials-widget/).
 
 = Primary Features =
 
 * API
 * Ajax based processing screen
-* Migrates GC Testimonial fields, categories, and images to Testimonials format
+* Migrates GC Testimonial fields, categories, and images to Testimonials Widget format
 * Settings export/import
 * Settings screen
 
@@ -35,7 +35,7 @@ Migrate GC Testimonials entries to Testimonials Widget custom post types for use
 
 * Export Settings – These are your current settings in a serialized format. Copy the contents to make a backup of your settings.
 * Import Settings – Paste new serialized settings here to overwrite your current configuration.
-* Remove Plugin Data on Deletion? - Delete all GC Testimonials to Testimonials data and options from database on plugin deletion
+* Remove Plugin Data on Deletion? - Delete all GC Testimonials to Testimonials Widget data and options from database on plugin deletion
 * Reset to Defaults? – Check this box to reset options to their defaults
 
 
@@ -44,13 +44,13 @@ Migrate GC Testimonials entries to Testimonials Widget custom post types for use
 = Requirements =
 
 * PHP 5.3+ [Read notice](https://nodedesk.zendesk.com/hc/en-us/articles/202331041)
-* Plugin "[Testimonials](http://wordpress.org/plugins/testimonials-widget/)" is required to be installed and activated prior to activating "GC Testimonials to Testimonials".
+* Plugin "[Testimonials Widget](http://wordpress.org/plugins/testimonials-widget/)" is required to be installed and activated prior to activating "GC Testimonials to Testimonials Widget".
 
 = Install Methods =
 
-* Through WordPress Admin > Plugins > Add New, Search for "GC Testimonials to Testimonials"
-	* Find "GC Testimonials to Testimonials"
-	* Click "Install Now" of "GC Testimonials to Testimonials"
+* Through WordPress Admin > Plugins > Add New, Search for "GC Testimonials to Testimonials Widget"
+	* Find "GC Testimonials to Testimonials Widget"
+	* Click "Install Now" of "GC Testimonials to Testimonials Widget"
 * Download [`gc-testimonials-to-testimonials.zip`](http://downloads.wordpress.org/plugin/gc-testimonials-to-testimonials.zip) locally
 	* Through WordPress Admin > Plugins > Add New
 	* Click Upload
@@ -61,8 +61,8 @@ Migrate GC Testimonials entries to Testimonials Widget custom post types for use
 
 = Activation Options =
 
-* Activate the "GC Testimonials to Testimonials" plugin after uploading
-* Activate the "GC Testimonials to Testimonials" plugin through WordPress Admin > Plugins
+* Activate the "GC Testimonials to Testimonials Widget" plugin after uploading
+* Activate the "GC Testimonials to Testimonials Widget" plugin through WordPress Admin > Plugins
 
 = Usage =
 
@@ -90,17 +90,17 @@ Migrate GC Testimonials entries to Testimonials Widget custom post types for use
 
 = Still Stuck or Want Something Done? Get Support! =
 
-1. [Testimonials Knowledge Base](https://nodedesk.zendesk.com/hc/en-us/sections/200861112-WordPress-FAQs) - read and comment upon 125+ frequently asked questions
-1. [Open GC Testimonials to Testimonials Issues](https://github.com/michael-cannon/gc-testimonials-to-testimonials/issues) - review and submit bug reports and enhancement requests
-1. [GC Testimonials to Testimonials Support on WordPress](http://wordpress.org/support/plugin/gc-testimonials-to-testimonials) - ask questions and review responses
-1. [Contribute Code to GC Testimonials to Testimonials](https://github.com/michael-cannon/gc-testimonials-to-testimonials/blob/master/CONTRIBUTING.md)
-1. [Beta Testers Needed](http://axelerant.com/become-beta-tester/) - get the latest GC Testimonials to Testimonials version
+1. [Testimonials Widget Knowledge Base](https://nodedesk.zendesk.com/hc/en-us/sections/200861112-WordPress-FAQs) - read and comment upon 125+ frequently asked questions
+1. [Open GC Testimonials to Testimonials Widget Issues](https://github.com/michael-cannon/gc-testimonials-to-testimonials/issues) - review and submit bug reports and enhancement requests
+1. [GC Testimonials to Testimonials Widget Support on WordPress](http://wordpress.org/support/plugin/gc-testimonials-to-testimonials) - ask questions and review responses
+1. [Contribute Code to GC Testimonials to Testimonials Widget](https://github.com/michael-cannon/gc-testimonials-to-testimonials/blob/master/CONTRIBUTING.md)
+1. [Beta Testers Needed](http://axelerant.com/become-beta-tester/) - get the latest GC Testimonials to Testimonials Widget version
 
 
 == Screenshots ==
 
-1. GC Testimonials to Testimonials Settings
-2. GC Testimonials to Testimonials Migrator
+1. GC Testimonials to Testimonials Widget Settings
+2. GC Testimonials to Testimonials Widget Migrator
 
 [gallery]
 
@@ -114,11 +114,11 @@ See [CHANGELOG](https://github.com/michael-cannon/gc-testimonials-to-testimonial
 
 = 1.2.2 =
 
-* Require Testimonials 2.19.0
+* Require Testimonials Widget 2.19.0
 
 = 1.2.1 =
 
-* Require Testimonials 2.18.1
+* Require Testimonials Widget 2.18.1
 
 = 1.0.0 =
 
@@ -132,7 +132,7 @@ TBD
 
 == API ==
 
-* Read the [GC Testimonials to Testimonials API](https://github.com/michael-cannon/gc-testimonials-to-testimonials/blob/master/API.md).
+* Read the [GC Testimonials to Testimonials Widget API](https://github.com/michael-cannon/gc-testimonials-to-testimonials/blob/master/API.md).
 
 == Localization ==
 
