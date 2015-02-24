@@ -3,7 +3,7 @@
 ## master
 
 ## 1.3.0RC1
-* Change brand name from Aihrus to Axelerant
+* Change branding from Aihrus to Axelerant
 * Update copyright text
 
 ## 1.2.2
