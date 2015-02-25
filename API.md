@@ -56,4 +56,4 @@ The [GC Testimonials to Testimonials Widget plugin](http://wordpress.org/plugins
 
 ## Need More?
 
-Further examples and more can be found by reading and searching the [GC Testimonials to Testimonials Widget Knowledge Base](https://aihrus.zendesk.com/categories/20104507-Testimonials-Widget) and [source code](https://github.com/michael-cannon/gc-testimonials-to-testimonials).
+Further examples and more can be found by reading and searching the [GC Testimonials to Testimonials Widget Knowledge Base](https://nodedesk.zendesk.com/hc/en-us/sections/200861112-WordPress-FAQs) and [source code](https://github.com/michael-cannon/gc-testimonials-to-testimonials).

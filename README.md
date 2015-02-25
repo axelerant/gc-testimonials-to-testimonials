@@ -24,7 +24,7 @@ If you find an issue, [let us know here](https://github.com/michael-cannon/gc-te
 
 ## Support
 
-This is a developer's portal for GC Testimonials to Testimonials Widget and should not be used for support. Please visit the [GC Testimonials to Testimonials Widget Knowledge Base](https://aihrus.zendesk.com/categories/20104507-Testimonials-Widget) for frequently asked questions, offering ideas, or getting support.
+This is a developer's portal for GC Testimonials to Testimonials Widget and should not be used for support. Please visit the [GC Testimonials to Testimonials Widget Knowledge Base](https://nodedesk.zendesk.com/hc/en-us/sections/200861112-WordPress-FAQs) for frequently asked questions, offering ideas, or getting support.
 
 ## Contributions
 
