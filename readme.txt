@@ -1,6 +1,7 @@
 === GC Testimonials to Testimonials Widget ===
 
 Contributors: comprock, saurabhd
+Donate link: http://axelerant.com/about-axelerant/donate/
 Tags: gc testimonials, migration, convert, testimonials, testimonials widget
 Requires at least: 3.6
 Tested up to: 3.9.0
