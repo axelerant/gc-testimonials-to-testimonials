@@ -264,7 +264,7 @@ class Gc_Testimonials_to_Testimonials extends Aihrus_Common {
 	<form method="post" action="">
 <?php wp_nonce_field( self::ID ); ?>
 
-	<p><?php _e( 'Use this tool for migrating GC Testimonials entries to Testimonials custom post types.', 'gc-testimonials-to-testimonials' ); ?></p>
+	<p><?php _e( 'Use this tool for migrating GC Testimonials entries to Testimonials Widget custom post types.', 'gc-testimonials-to-testimonials' ); ?></p>
 
 	<p><?php _e( 'This migration is not reversible. Backup your database beforehand or be prepared to delete each migrated testimonial manually.', 'gc-testimonials-to-testimonials' ); ?></p>
 
@@ -449,7 +449,7 @@ class Gc_Testimonials_to_Testimonials extends Aihrus_Common {
 
 		$result = self::migrate_item( self::$post_id, $post );
 		if ( is_numeric( $result ) )
-			die( json_encode( array( 'success' => sprintf( __( '&quot;<a href="%1$s" target="_blank">%2$s</a>&quot; GC Testimonial ID %3$s was successfully migrated to Testimonials %6$s &quot;<a href="%4$s" target="_blank">%5$s</a>&quot;.', 'gc-testimonials-to-testimonials' ), get_permalink( self::$post_id ), esc_html( get_the_title( self::$post_id ) ), self::$post_id, get_permalink( $result ), esc_html( get_the_title( $result ) ), $result ) ) ) );
+			die( json_encode( array( 'success' => sprintf( __( 'GC Testimonial ID %1$s was successfully migrated to Testimonials Widget %4$s &quot;<a href="%2$s" target="_blank">%3$s</a>&quot;.', 'gc-testimonials-to-testimonials' ), self::$post_id, get_permalink( $result ), esc_html( get_the_title( $result ) ), $result ) ) ) );
 		else
 			die( json_encode( array( 'error' => sprintf( __( '&quot;<a href="%1$s" target="_blank">%2$s</a>&quot; Unable to be migrated.', 'gc-testimonials-to-testimonials' ), get_permalink( self::$post_id ), esc_html( get_the_title( self::$post_id ) ) ) ) ) );
 	}

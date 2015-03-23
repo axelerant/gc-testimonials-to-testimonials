@@ -113,6 +113,10 @@ See [CHANGELOG](https://github.com/michael-cannon/gc-testimonials-to-testimonial
 
 == Upgrade Notice ==
 
+= 1.3.0 =
+
+* Require Testimonials Widget 3.1.0
+
 = 1.2.2 =
 
 * Require Testimonials Widget 2.19.0

@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Testimonials Widget – GC Testimonials Migrator
  * Plugin URI: http://wordpress.org/plugins/gc-testimonials-to-testimonials/
- * Description: Migrate GC Testimonials entries to Testimonials custom post types.
+ * Description: Migrate GC Testimonials entries to Testimonials Widgets custom post types.
  * Version: 1.3.0RC1
  * Author: Axelerant
  * Author URI: http://axelerant.com/
@@ -35,8 +35,8 @@ define( 'GCT2T_REQ_BASE', 'testimonials-widget/testimonials-widget.php' );
 define( 'GCT2T_REQ_BASE_PREM', 'testimonials-widget-premium/testimonials-widget-premium.php' );
 define( 'GCT2T_REQ_NAME', 'Testimonials Widget' );
 define( 'GCT2T_REQ_SLUG', 'testimonials-widget' );
-define( 'GCT2T_REQ_VERSION', '2.19.0' );
-define( 'GCT2T_VERSION', '1.2.2' );
+define( 'GCT2T_REQ_VERSION', '3.1.0' );
+define( 'GCT2T_VERSION', '1.3.0RC1' );
 
 if ( defined( 'TW_DIR_LIB' ) ) {
 	define( 'GCT2T_DIR_LIB_ALT', TW_DIR_LIB );
@@ -63,20 +63,24 @@ add_action( 'plugins_loaded', 'gc_testimonials_to_testimonials_init', 99 );
  */
 if ( ! function_exists( 'gc_testimonials_to_testimonials_init' ) ) {
 	function gc_testimonials_to_testimonials_init() {
-		if ( ! is_admin() )
+		if ( ! is_admin() ) {
 			return;
+		}
 
-		if ( ! function_exists( 'add_screen_meta_link' ) )
+		if ( ! function_exists( 'add_screen_meta_link' ) ) {
 			require_once GCT2T_DIR_LIB . 'screen-meta-links.php';
+		}
 
 		if ( Gc_Testimonials_to_Testimonials::version_check() ) {
 			global $Gc_Testimonials_to_Testimonials;
-			if ( is_null( $Gc_Testimonials_to_Testimonials ) )
+			if ( is_null( $Gc_Testimonials_to_Testimonials ) ) {
 				$Gc_Testimonials_to_Testimonials = new Gc_Testimonials_to_Testimonials();
+			}
 
 			global $Gc_Testimonials_to_Testimonials_Settings;
-			if ( is_null( $Gc_Testimonials_to_Testimonials_Settings ) )
+			if ( is_null( $Gc_Testimonials_to_Testimonials_Settings ) ) {
 				$Gc_Testimonials_to_Testimonials_Settings = new Gc_Testimonials_to_Testimonials_Settings();
+			}
 		}
 	}
 }

@@ -4,7 +4,9 @@
 
 ## 1.3.0RC1
 * Change branding from Aihrus to Axelerant
+* Require Testimonials Widget 3.1.0
 * Update copyright text
+* Update import verbiage
 * Update plugin name
 
 ## 1.2.2
