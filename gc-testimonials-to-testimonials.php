@@ -35,7 +35,7 @@ define( 'GCT2T_REQ_BASE', 'testimonials-widget/testimonials-widget.php' );
 define( 'GCT2T_REQ_BASE_PREM', 'testimonials-widget-premium/testimonials-widget-premium.php' );
 define( 'GCT2T_REQ_NAME', 'Testimonials Widget' );
 define( 'GCT2T_REQ_SLUG', 'testimonials-widget' );
-define( 'GCT2T_REQ_VERSION', '3.1.0' );
+define( 'GCT2T_REQ_VERSION', '3.1.0RC1' );
 define( 'GCT2T_VERSION', '1.3.0RC1' );
 
 if ( defined( 'TW_DIR_LIB' ) ) {
