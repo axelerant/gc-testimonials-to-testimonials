@@ -119,7 +119,7 @@ class Gc_Testimonials_to_Testimonials extends Aihrus_Common {
 			return;
 
 		global $wpdb;
-		
+
 		require_once GCT2T_DIR_INC . 'class-gc-testimonials-to-testimonials-settings.php';
 
 		$delete_data = gct2t_get_option( 'delete_data', false );
@@ -245,7 +245,7 @@ class Gc_Testimonials_to_Testimonials extends Aihrus_Common {
 		$limit = gct2t_get_option( 'limit' );
 		if ( $limit )
 			$query_wp = preg_replace( '#\bLIMIT 0,.*#', 'LIMIT 0,' . $limit, $query_wp );
-		else
+		else 
 			$query_wp = preg_replace( '#\bLIMIT 0,.*#', '', $query_wp );
 
 		$posts = $wpdb->get_col( $query_wp );
