@@ -1,14 +1,14 @@
-# Copyright (C) 2014 Testimonials – GC Testimonials Migrator
-# This file is distributed under the same license as the Testimonials – GC Testimonials Migrator package.
+# Copyright (C) 2015 Testimonials Widget – GC Testimonials Migrator
+# This file is distributed under the same license as the Testimonials Widget – GC Testimonials Migrator package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Testimonials – GC Testimonials Migrator 1.2.2\n"
-"Report-Msgid-Bugs-To: http://wordpress.org/tag/gc-testimonials-to-testimonials\n"
-"POT-Creation-Date: 2014-04-07 12:35:20+00:00\n"
+"Project-Id-Version: Testimonials Widget – GC Testimonials Migrator 1.3.0\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/support/plugin/gc-testimonials-to-testimonials\n"
+"POT-Creation-Date: 2015-04-29 21:42:49+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2014-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2015-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 
@@ -96,7 +96,7 @@ msgid "All done. No posts needing processing found."
 msgstr ""
 
 #: includes/class-gc-testimonials-to-testimonials.php:267
-msgid "Use this tool for migrating GC Testimonials entries to Testimonials custom post types."
+msgid "Use this tool for migrating GC Testimonials entries to Testimonials Widget custom post types."
 msgstr ""
 
 #: includes/class-gc-testimonials-to-testimonials.php:269
@@ -169,7 +169,7 @@ msgid "Failed Migration: %s is incorrect post type."
 msgstr ""
 
 #: includes/class-gc-testimonials-to-testimonials.php:452
-msgid "&quot;<a href=\"%1$s\" target=\"_blank\">%2$s</a>&quot; GC Testimonial ID %3$s was successfully migrated to Testimonials %6$s &quot;<a href=\"%4$s\" target=\"_blank\">%5$s</a>&quot;."
+msgid "GC Testimonial ID %1$s was successfully migrated to Testimonials Widget %4$s &quot;<a href=\"%2$s\" target=\"_blank\">%3$s</a>&quot;."
 msgstr ""
 
 #: includes/class-gc-testimonials-to-testimonials.php:454
@@ -200,7 +200,7 @@ msgstr ""
 msgid "Plugin \"%3$s\" has been deactivated. Please %1$s \"%4$s\" version %2$s or newer before activating \"%3$s\"."
 msgstr ""
 #. Plugin Name of the plugin/theme
-msgid "Testimonials – GC Testimonials Migrator"
+msgid "Testimonials Widget – GC Testimonials Migrator"
 msgstr ""
 
 #. Plugin URI of the plugin/theme
@@ -208,11 +208,11 @@ msgid "http://wordpress.org/plugins/gc-testimonials-to-testimonials/"
 msgstr ""
 
 #. Description of the plugin/theme
-msgid "Migrate GC Testimonials entries to Testimonials Widget custom post types."
+msgid "Migrate GC Testimonials entries to Testimonials Widgets custom post types."
 msgstr ""
 
 #. Author of the plugin/theme
-msgid "Michael Cannon"
+msgid "Axelerant"
 msgstr ""
 
 #. Author URI of the plugin/theme
