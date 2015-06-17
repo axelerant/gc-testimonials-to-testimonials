@@ -3,6 +3,7 @@
 ## master
 
 ## 1.3.1RC1
+* Update store branding
 
 ## 1.3.0
 * Change branding from Aihrus to Axelerant

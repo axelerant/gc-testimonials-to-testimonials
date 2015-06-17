@@ -1,7 +1,7 @@
 === GC Testimonials to Testimonials Widget ===
 
-Contributors: comprock, saurabhd
-Donate link: http://axelerant.com/about-axelerant/donate/
+Contributors: comprock,saurabhd,subharanjan
+Donate link: https://axelerant.com/about-axelerant/donate/
 Tags: gc testimonials, migration, convert, testimonials, testimonials widget
 Requires at least: 3.9.2
 Tested up to: 4.3.0
@@ -95,7 +95,7 @@ Migrate GC Testimonials entries to Testimonials Widget custom post types for use
 1. [Open GC Testimonials to Testimonials Widget Issues](https://github.com/michael-cannon/gc-testimonials-to-testimonials/issues) - review and submit bug reports and enhancement requests
 1. [GC Testimonials to Testimonials Widget Support on WordPress](http://wordpress.org/support/plugin/gc-testimonials-to-testimonials) - ask questions and review responses
 1. [Contribute Code to GC Testimonials to Testimonials Widget](https://github.com/michael-cannon/gc-testimonials-to-testimonials/blob/master/CONTRIBUTING.md)
-1. [Beta Testers Needed](http://axelerant.com/become-beta-tester/) - get the latest GC Testimonials to Testimonials Widget version
+1. [Beta Testers Needed](http://store.axelerant.com/become-beta-tester/) - get the latest GC Testimonials to Testimonials Widget version
 
 
 == Screenshots ==
@@ -141,6 +141,6 @@ TBD
 
 == Localization ==
 
-You can translate this plugin into your own language if it's not done so already. The localization file `gc-testimonials-to-testimonials.pot` can be found in the `languages` folder of this plugin. After translation, please [send the localized file](http://axelerant.com/contact-axelerant/) for plugin inclusion.
+You can translate this plugin into your own language if it's not done so already. The localization file `gc-testimonials-to-testimonials.pot` can be found in the `languages` folder of this plugin. After translation, please [send the localized file](https://axelerant.com/contact-axelerant/) for plugin inclusion.
 
 **[How do I localize?](https://nodedesk.zendesk.com/hc/en-us/articles/202294892)**
