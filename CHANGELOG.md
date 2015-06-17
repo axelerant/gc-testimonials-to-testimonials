@@ -2,6 +2,8 @@
 
 ## master
 
+## 1.3.1RC1
+
 ## 1.3.0
 * Change branding from Aihrus to Axelerant
 * Require Testimonials Widget 3.1.0
