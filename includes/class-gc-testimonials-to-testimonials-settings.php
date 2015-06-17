@@ -24,8 +24,9 @@
 
 require_once GCT2T_DIR_LIB_ALT . 'aihrus-framework/includes/class-aihrus-settings.php';
 
-if ( class_exists( 'Gc_Testimonials_to_Testimonials_Settings' ) )
+if ( class_exists( 'Gc_Testimonials_to_Testimonials_Settings' ) ) {
 	return;
+}
 
 
 class Gc_Testimonials_to_Testimonials_Settings extends Aihrus_Settings {
@@ -56,11 +57,13 @@ class Gc_Testimonials_to_Testimonials_Settings extends Aihrus_Settings {
 		self::$version = Gc_Testimonials_to_Testimonials::VERSION;
 		self::$version = apply_filters( 'gct2t_version', self::$version );
 
-		if ( $version != self::$version )
+		if ( $version != self::$version ) {
 			self::initialize_settings();
+		}
 
-		if ( ! Gc_Testimonials_to_Testimonials::do_load() )
+		if ( ! Gc_Testimonials_to_Testimonials::do_load() ) {
 			return;
+		}
 
 		self::load_options();
 		self::register_settings();
@@ -139,8 +142,9 @@ class Gc_Testimonials_to_Testimonials_Settings extends Aihrus_Settings {
 
 		self::$settings = apply_filters( 'gct2t_settings', self::$settings );
 
-		foreach ( self::$settings as $id => $parts )
+		foreach ( self::$settings as $id => $parts ) {
 			self::$settings[ $id ] = wp_parse_args( $parts, self::$default );
+		}
 	}
 
 
@@ -173,8 +177,9 @@ class Gc_Testimonials_to_Testimonials_Settings extends Aihrus_Settings {
 	public static function validate_settings( $input, $options = null, $do_errors = false ) {
 		$validated = parent::validate_settings( $input, $options, $do_errors );
 
-		if ( empty( $do_errors ) )
+		if ( empty( $do_errors ) ) {
 			$input = $validated;
+		}
 		else {
 			$input  = $validated['input'];
 			$errors = $validated['errors'];
@@ -184,8 +189,9 @@ class Gc_Testimonials_to_Testimonials_Settings extends Aihrus_Settings {
 		$input['donate_version'] = Gc_Testimonials_to_Testimonials::VERSION;
 
 		$input = apply_filters( 'gct2t_validate_settings', $input, $errors );
-		if ( empty( $do_errors ) )
+		if ( empty( $do_errors ) ) {
 			$validated = $input;
+		}
 		else {
 			$validated = array(
 				'input' => $input,
@@ -199,8 +205,9 @@ class Gc_Testimonials_to_Testimonials_Settings extends Aihrus_Settings {
 
 	public static function settings_add_help_tabs() {
 		$screen = get_current_screen();
-		if ( self::$admin_page != $screen->id )
+		if ( self::$admin_page != $screen->id ) {
 			return;
+		}
 
 		$screen->set_help_sidebar(
 			'<p><strong>' . esc_html__( 'For more information:', 'gc-testimonials-to-testimonials' ) . '</strong></p><p>' .
@@ -232,11 +239,13 @@ class Gc_Testimonials_to_Testimonials_Settings extends Aihrus_Settings {
 	 */
 	public static function display_setting( $args = array(), $do_echo = true, $input = null ) {
 		$content = apply_filters( 'gct2t_display_setting', '', $args, $input );
-		if ( empty( $content ) )
+		if ( empty( $content ) ) {
 			$content = parent::display_setting( $args, false, $input );
+		}
 
-		if ( ! $do_echo )
+		if ( ! $do_echo ) {
 			return $content;
+		}
 
 		echo $content;
 	}
@@ -260,20 +269,23 @@ function gct2t_get_options() {
 function gct2t_get_option( $option, $default = null ) {
 	$options = get_option( Gc_Testimonials_to_Testimonials_Settings::ID, null );
 
-	if ( isset( $options[$option] ) )
-		return $options[$option];
-	else
+	if ( isset( $options[ $option ] ) ) {
+		return $options[ $option ];
+	}
+	else {
 		return $default;
+	}
 }
 
 
 function gct2t_set_option( $option, $value = null ) {
 	$options = get_option( Gc_Testimonials_to_Testimonials_Settings::ID );
 
-	if ( ! is_array( $options ) )
+	if ( ! is_array( $options ) ) {
 		$options = array();
+	}
 
-	$options[$option] = $value;
+	$options[ $option ] = $value;
 	update_option( Gc_Testimonials_to_Testimonials_Settings::ID, $options );
 }
 
