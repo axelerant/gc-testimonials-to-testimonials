@@ -179,8 +179,7 @@ class Gc_Testimonials_to_Testimonials_Settings extends Aihrus_Settings {
 
 		if ( empty( $do_errors ) ) {
 			$input = $validated;
-		}
-		else {
+		} else {
 			$input  = $validated['input'];
 			$errors = $validated['errors'];
 		}
@@ -191,8 +190,7 @@ class Gc_Testimonials_to_Testimonials_Settings extends Aihrus_Settings {
 		$input = apply_filters( 'gct2t_validate_settings', $input, $errors );
 		if ( empty( $do_errors ) ) {
 			$validated = $input;
-		}
-		else {
+		} else {
 			$validated = array(
 				'input' => $input,
 				'errors' => $errors,
@@ -271,8 +269,7 @@ function gct2t_get_option( $option, $default = null ) {
 
 	if ( isset( $options[ $option ] ) ) {
 		return $options[ $option ];
-	}
-	else {
+	} else {
 		return $default;
 	}
 }

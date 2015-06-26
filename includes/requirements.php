@@ -23,8 +23,7 @@ if ( ! function_exists( 'aihr_notice_version' ) ) {
 		$is_active = is_plugin_active( $required_base );
 		if ( $is_active ) {
 			$link = sprintf( __( '<a href="%1$s">update to</a>', 'gc-testimonials-to-testimonials' ), self_admin_url( 'update-core.php' ) );
-		}
-		else {
+		} else {
 			$plugins = get_plugins();
 			if ( empty( $plugins[ $required_base ] ) ) {
 				$install = esc_url( wp_nonce_url( self_admin_url( 'update.php?action=install-plugin&plugin=' . $required_slug ), 'install-plugin_' . $required_slug ) );
