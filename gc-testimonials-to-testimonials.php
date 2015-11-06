@@ -3,7 +3,7 @@
  * Plugin Name: Testimonials Widget – GC Testimonials Migrator
  * Plugin URI: http://wordpress.org/plugins/gc-testimonials-to-testimonials/
  * Description: Migrate GC Testimonials entries to Testimonials Widgets custom post types.
- * Version: 1.3.1
+ * Version: 1.4.0RC1
  * Author: Axelerant
  * Author URI: https://axelerant.com/
  * License: GPLv2 or later
@@ -33,6 +33,7 @@ define( 'GCT2T_DIR_LIB', GCT2T_DIR_INC . 'libraries/' );
 define( 'GCT2T_NAME', 'GC Testimonials to Testimonials Widget' );
 define( 'GCT2T_REQ_BASE', 'testimonials-widget/testimonials-widget.php' );
 define( 'GCT2T_REQ_BASE_PREM', 'testimonials-widget-premium/testimonials-widget-premium.php' );
+define( 'GCT2T_REQ_CLASS', 'Testimonials_Widget' );
 define( 'GCT2T_REQ_NAME', 'Testimonials Widget' );
 define( 'GCT2T_REQ_SLUG', 'testimonials-widget' );
 define( 'GCT2T_REQ_VERSION', '3.2.0' );
@@ -46,9 +47,6 @@ if ( defined( 'TW_DIR_LIB' ) ) {
 
 require_once GCT2T_DIR_INC . 'requirements.php';
 
-if ( ! gct2t_requirements_check() ) {
-	return false;
-}
 
 require_once GCT2T_DIR_INC . 'class-gc-testimonials-to-testimonials.php';
 
@@ -65,6 +63,10 @@ if ( ! function_exists( 'gc_testimonials_to_testimonials_init' ) ) {
 	function gc_testimonials_to_testimonials_init() {
 		if ( ! is_admin() ) {
 			return;
+		}
+
+		if ( ! gct2t_requirements_check() ) {
+			return false;
 		}
 
 		if ( ! function_exists( 'add_screen_meta_link' ) ) {
