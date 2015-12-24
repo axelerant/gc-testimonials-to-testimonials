@@ -455,14 +455,14 @@ if ( ! empty( $_POST[ self::ID ] ) || ! empty( $_REQUEST['posts'] ) ) {
 
 		$post = get_post( self::$post_id, ARRAY_A );
 		if ( ! $post || ! in_array( $post['post_type'], self::$post_types )  ) {
-			die( json_encode( array( 'error' => sprintf( esc_html__( 'Failed Migration: %s is incorrect post type.', 'gc-testimonials-to-testimonials' ), esc_html( self::$post_id ) ) ) ) );
+			die( wp_json_encode( array( 'error' => sprintf( esc_html__( 'Failed Migration: %s is incorrect post type.', 'gc-testimonials-to-testimonials' ), esc_html( self::$post_id ) ) ) ) );
 		}
 
 		$result = self::migrate_item( self::$post_id, $post );
 		if ( is_numeric( $result ) ) {
-			die( json_encode( array( 'success' => sprintf( __( 'GC Testimonial ID %1$s was successfully migrated to Testimonials Widget %4$s &quot;<a href="%2$s" target="_blank">%3$s</a>&quot;.', 'gc-testimonials-to-testimonials' ), self::$post_id, get_permalink( $result ), esc_html( get_the_title( $result ) ), $result ) ) ) );
+			die( wp_json_encode( array( 'success' => sprintf( __( 'GC Testimonial ID %1$s was successfully migrated to Testimonials Widget %4$s &quot;<a href="%2$s" target="_blank">%3$s</a>&quot;.', 'gc-testimonials-to-testimonials' ), self::$post_id, get_permalink( $result ), esc_html( get_the_title( $result ) ), $result ) ) ) );
 		} else {
-			die( json_encode( array( 'error' => sprintf( __( '&quot;<a href="%1$s" target="_blank">%2$s</a>&quot; Unable to be migrated.', 'gc-testimonials-to-testimonials' ), get_permalink( self::$post_id ), esc_html( get_the_title( self::$post_id ) ) ) ) ) );
+			die( wp_json_encode( array( 'error' => sprintf( __( '&quot;<a href="%1$s" target="_blank">%2$s</a>&quot; Unable to be migrated.', 'gc-testimonials-to-testimonials' ), get_permalink( self::$post_id ), esc_html( get_the_title( self::$post_id ) ) ) ) ) );
 		}
 	}
 
@@ -483,7 +483,7 @@ if ( ! empty( $_POST[ self::ID ] ) || ! empty( $_REQUEST['posts'] ) ) {
 					'value' => $post_id,
 					'type' => 'NUMERIC',
 				),
-			)
+			),
 		);
 
 		$migrated = new WP_Query( $migrated_args );
@@ -586,7 +586,7 @@ if ( ! empty( $_POST[ self::ID ] ) || ! empty( $_REQUEST['posts'] ) ) {
 
 		// display donate on major/minor version release
 		$donate_version = gct2t_get_option( 'donate_version', false );
-		if ( ! $donate_version || ( $donate_version != self::VERSION && preg_match( '#\.0$#', self::VERSION ) ) ) {
+		if ( ! $donate_version || ( self::VERSION != $donate_version && preg_match( '#\.0$#', self::VERSION ) ) ) {
 			add_action( 'admin_notices', array( __CLASS__, 'notice_donate' ) );
 			gct2t_set_option( 'donate_version', self::VERSION );
 		}
@@ -662,8 +662,6 @@ if ( ! empty( $_POST[ self::ID ] ) || ! empty( $_REQUEST['posts'] ) ) {
 			return apply_filters( 'gct2t_defaults_single', gct2t_get_options() );
 		}
 	}
-
-
 }
 
 

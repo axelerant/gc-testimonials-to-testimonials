@@ -222,7 +222,7 @@ class Gc_Testimonials_to_Testimonials_Settings extends Aihrus_Settings {
 			array(
 				'id'     => 'tw-general',
 				'title'     => esc_html__( 'General', 'gc-testimonials-to-testimonials' ),
-				'content' => '<p>' . esc_html__( 'Show or hide optional fields.', 'gc-testimonials-to-testimonials' ) . '</p>'
+				'content' => '<p>' . esc_html__( 'Show or hide optional fields.', 'gc-testimonials-to-testimonials' ) . '</p>',
 			)
 		);
 
@@ -247,8 +247,6 @@ class Gc_Testimonials_to_Testimonials_Settings extends Aihrus_Settings {
 
 		echo $content;
 	}
-
-
 }
 
 
