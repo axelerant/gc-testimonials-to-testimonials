@@ -4,6 +4,7 @@
 
 ## 1.4.0RC1
 * Remove activation helpers
+* Changed Requered Testimonials_Widget class to Axl_Testimonials_Widget
 
 ## 1.3.1
 * Update store branding
