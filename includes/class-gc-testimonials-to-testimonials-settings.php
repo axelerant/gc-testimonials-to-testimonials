@@ -248,7 +248,6 @@ class Gc_Testimonials_to_Testimonials_Settings extends Aihrus_Settings {
 		echo $content;
 	}
 
-
 }
 
 

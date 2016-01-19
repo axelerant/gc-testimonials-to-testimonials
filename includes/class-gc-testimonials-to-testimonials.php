@@ -663,7 +663,6 @@ if ( ! empty( $_POST[ self::ID ] ) || ! empty( $_REQUEST['posts'] ) ) {
 		}
 	}
 
-
 }
 
 
