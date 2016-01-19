@@ -662,7 +662,6 @@ if ( ! empty( $_POST[ self::ID ] ) || ! empty( $_REQUEST['posts'] ) ) {
 			return apply_filters( 'gct2t_defaults_single', gct2t_get_options() );
 		}
 	}
-
 }
 
 
