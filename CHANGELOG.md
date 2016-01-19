@@ -3,10 +3,11 @@
 ## master
 
 ## 1.4.0RC2
-* Remove activation helpers
+* Changed Requered Testimonials_Widget class to Axl_Testimonials_Widget
 * Confirm WordPress 4.4 compatibility
-* Fix coding standards for CI.
-* Remove `ProjectStatus` button by stillmaintained.com from readme file.
+* Fix coding standards for CI
+* Remove `ProjectStatus` button by stillmaintained.com from readme file
+* Remove activation helpers
 
 ## 1.3.1
 * Update store branding

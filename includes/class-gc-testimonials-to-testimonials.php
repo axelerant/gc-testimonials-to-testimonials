@@ -61,12 +61,12 @@ class Gc_Testimonials_to_Testimonials extends Aihrus_Common {
 		add_filter( 'plugin_action_links', array( __CLASS__, 'plugin_action_links' ), 10, 2 );
 		add_filter( 'plugin_row_meta', array( __CLASS__, 'plugin_row_meta' ), 10, 2 );
 
-		self::$settings_link = '<a href="' . get_admin_url() . 'edit.php?post_type=' . Testimonials_Widget::PT . '&page=' . Gc_Testimonials_to_Testimonials_Settings::ID . '">' . __( 'Settings', 'gc-testimonials-to-testimonials' ) . '</a>';
+		self::$settings_link = '<a href="' . get_admin_url() . 'edit.php?post_type=' . Axl_Testimonials_Widget::PT . '&page=' . Gc_Testimonials_to_Testimonials_Settings::ID . '">' . __( 'Settings', 'gc-testimonials-to-testimonials' ) . '</a>';
 	}
 
 
 	public static function admin_menu() {
-		self::$menu_id = add_submenu_page( 'edit.php?post_type=' . Testimonials_Widget::PT, esc_html__( 'GC Testimonials to Testimonials Migrator', 'gc-testimonials-to-testimonials' ), esc_html__( 'GCT Migrator', 'gc-testimonials-to-testimonials' ), 'manage_options', self::ID, array( __CLASS__, 'user_interface' ) );
+		self::$menu_id = add_submenu_page( 'edit.php?post_type=' . Axl_Testimonials_Widget::PT, esc_html__( 'GC Testimonials to Testimonials Migrator', 'gc-testimonials-to-testimonials' ), esc_html__( 'GCT Migrator', 'gc-testimonials-to-testimonials' ), 'manage_options', self::ID, array( __CLASS__, 'user_interface' ) );
 
 		add_action( 'admin_print_scripts-' . self::$menu_id, array( __CLASS__, 'scripts' ) );
 		add_action( 'admin_print_styles-' . self::$menu_id, array( __CLASS__, 'styles' ) );
@@ -74,7 +74,7 @@ class Gc_Testimonials_to_Testimonials extends Aihrus_Common {
 		add_screen_meta_link(
 			'gct2t_settings_link',
 			esc_html__( 'GC Testimonials to Testimonials Settings', 'gc-testimonials-to-testimonials' ),
-			admin_url( 'edit.php?post_type=' . Testimonials_Widget::PT . '&page=' . Gc_Testimonials_to_Testimonials_Settings::ID ),
+			admin_url( 'edit.php?post_type=' . Axl_Testimonials_Widget::PT . '&page=' . Gc_Testimonials_to_Testimonials_Settings::ID ),
 			self::$menu_id,
 			array( 'style' => 'font-weight: bold;' )
 		);
@@ -95,7 +95,7 @@ class Gc_Testimonials_to_Testimonials extends Aihrus_Common {
 		if ( self::BASE == $file ) {
 			array_unshift( $links, self::$settings_link );
 
-			$link = '<a href="' . get_admin_url() . 'edit.php?post_type=' . Testimonials_Widget::PT . '&page=' . self::ID . '">' . esc_html__( 'Migrate', 'gc-testimonials-to-testimonials' ) . '</a>';
+			$link = '<a href="' . get_admin_url() . 'edit.php?post_type=' . Axl_Testimonials_Widget::PT . '&page=' . self::ID . '">' . esc_html__( 'Migrate', 'gc-testimonials-to-testimonials' ) . '</a>';
 			array_unshift( $links, $link );
 		}
 
@@ -662,6 +662,7 @@ if ( ! empty( $_POST[ self::ID ] ) || ! empty( $_REQUEST['posts'] ) ) {
 			return apply_filters( 'gct2t_defaults_single', gct2t_get_options() );
 		}
 	}
+
 }
 
 
