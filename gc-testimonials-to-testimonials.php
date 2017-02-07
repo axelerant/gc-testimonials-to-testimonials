@@ -3,7 +3,7 @@
  * Plugin Name: Testimonials Widget – GC Testimonials Migrator
  * Plugin URI: http://wordpress.org/plugins/gc-testimonials-to-testimonials/
  * Description: Migrate GC Testimonials entries to Testimonials Widgets custom post types.
- * Version: 1.4.0RC2
+ * Version: 1.4.0RC3
  * Author: Axelerant
  * Author URI: https://axelerant.com/
  * License: GPLv2 or later
@@ -36,8 +36,8 @@ define( 'GCT2T_REQ_BASE_PREM', 'testimonials-widget-premium/testimonials-widget-
 define( 'GCT2T_REQ_CLASS', 'Axl_Testimonials_Widget' );
 define( 'GCT2T_REQ_NAME', 'Testimonials Widget' );
 define( 'GCT2T_REQ_SLUG', 'testimonials-widget' );
-define( 'GCT2T_REQ_VERSION', '3.2.1RC7' );
-define( 'GCT2T_VERSION', '1.4.0RC2' );
+define( 'GCT2T_REQ_VERSION', '3.3.6' );
+define( 'GCT2T_VERSION', '1.4.0RC3' );
 
 if ( defined( 'TW_DIR_LIB' ) ) {
 	define( 'GCT2T_DIR_LIB_ALT', TW_DIR_LIB );

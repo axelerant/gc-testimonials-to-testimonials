@@ -2,12 +2,13 @@
 
 ## master
 
-## 1.4.0RC2
+## 1.4.0RC3
 * Changed Requered Testimonials_Widget class to Axl_Testimonials_Widget
-* Confirm WordPress 4.4 compatibility
+* Confirm WordPress 4.7.2 compatibility
 * Fix coding standards for CI
 * Remove `ProjectStatus` button by stillmaintained.com from readme file
 * Remove activation helpers
+* Update Axelerant plugin FAQ's
 
 ## 1.3.1
 * Update store branding

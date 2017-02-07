@@ -4,8 +4,8 @@ Contributors: comprock,saurabhd,subharanjan
 Donate link: https://axelerant.com/about-axelerant/donate/
 Tags: gc testimonials, migration, convert, testimonials, testimonials widget
 Requires at least: 3.9.2
-Tested up to: 4.4.0
-Stable tag: 1.4.0RC2
+Tested up to: 4.7.2
+Stable tag: 1.4.0RC3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
