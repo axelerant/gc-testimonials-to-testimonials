@@ -47,9 +47,6 @@ if ( defined( 'TW_DIR_LIB' ) ) {
 
 require_once GCT2T_DIR_INC . 'requirements.php';
 
-
-require_once GCT2T_DIR_INC . 'class-gc-testimonials-to-testimonials.php';
-
 add_action( 'plugins_loaded', 'gc_testimonials_to_testimonials_init', 99 );
 
 
@@ -61,29 +58,33 @@ add_action( 'plugins_loaded', 'gc_testimonials_to_testimonials_init', 99 );
  */
 if ( ! function_exists( 'gc_testimonials_to_testimonials_init' ) ) {
 	function gc_testimonials_to_testimonials_init() {
-		if ( ! is_admin() ) {
+		if ( ! is_admin() && ( ! defined( 'DOING_AJAX' ) || ! DOING_AJAX ) ) {
 			return;
 		}
 
 		if ( ! gct2t_requirements_check() ) {
 			return false;
-		}
+		} else {
+			require_once GCT2T_DIR_INC . 'class-gc-testimonials-to-testimonials.php';
 
-		if ( ! function_exists( 'add_screen_meta_link' ) ) {
+			if ( ! function_exists( 'add_screen_meta_link' ) ) {
 			require_once GCT2T_DIR_LIB . 'screen-meta-links.php';
-		}
-
-		if ( Gc_Testimonials_to_Testimonials::version_check() ) {
-			global $Gc_Testimonials_to_Testimonials;
-			if ( is_null( $Gc_Testimonials_to_Testimonials ) ) {
-				$Gc_Testimonials_to_Testimonials = new Gc_Testimonials_to_Testimonials();
 			}
 
-			global $Gc_Testimonials_to_Testimonials_Settings;
-			if ( is_null( $Gc_Testimonials_to_Testimonials_Settings ) ) {
-				$Gc_Testimonials_to_Testimonials_Settings = new Gc_Testimonials_to_Testimonials_Settings();
+			if ( Gc_Testimonials_to_Testimonials::version_check() ) {
+				global $Gc_Testimonials_to_Testimonials;
+				if ( is_null( $Gc_Testimonials_to_Testimonials ) ) {
+					$Gc_Testimonials_to_Testimonials = new Gc_Testimonials_to_Testimonials();
+				}
+
+				global $Gc_Testimonials_to_Testimonials_Settings;
+				if ( is_null( $Gc_Testimonials_to_Testimonials_Settings ) ) {
+					$Gc_Testimonials_to_Testimonials_Settings = new Gc_Testimonials_to_Testimonials_Settings();
+				}
 			}
+
 		}
+
 	}
 }
 
