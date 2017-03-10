@@ -1,16 +1,19 @@
 {
-    "name": "axelerant/gc-testimonials-to-testimonials",
-    "type": "library",
-    "description": "WordPress plugin to import GC Testimonials plugin to Testimonials Widget",
-    "support": {
-	"issues": "https://github.com/axelerant/gc-testimonials-to-testimonials/issues"
-    },
-    "license": "GPLv2 or later",
-    "authors": [
-        {
-            "name": "Axelerant",
-            "email": "support@axelerant.com",
-            "homepage": "https://store.axelerant.com/"
-        }
-    ]
+  "name": "axelerant/gc-testimonials-to-testimonials",
+  "description": "WordPress plugin to import GC Testimonials plugin to Testimonials Widget",
+  "keywords": ["wordpress", "plugin", "axelerant"],
+  "homepage": "https://store.axelerant.com",
+  "license": "GPLv2 or later",
+  "authors": [
+    {
+      "name": "Axelerant",
+      "email": "support@axelerant.com",
+      "homepage": "https://store.axelerant.com/"
+    }
+  ],
+  "type": "wordpress-plugin",
+  "require": {
+    "php": ">=5.6",
+    "composer/installers": "v1.0.6"
+  }
 }
