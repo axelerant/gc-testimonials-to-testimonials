@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: Testimonials Widget – GC Testimonials Migrator
+ * Plugin Name: Testimonials Widget – GC Testimonials Migrator plugin
  * Plugin URI: http://wordpress.org/plugins/gc-testimonials-to-testimonials/
  * Description: Migrate GC Testimonials entries to Testimonials Widgets custom post types.
  * Version: 1.4.0RC3
